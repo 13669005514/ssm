@@ -1,0 +1,83 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<title>人力资源信息管理</title>
+<link href="../Css/Style.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript" src="../JS/Common.js" ></script>
+<script language="javascript">
+
+	function goPage(sw)
+	{
+		var url;
+		
+			
+		switch (sw) 
+		{
+					
+			case "1":	
+			{ 
+					url = "../Check/RLZY_RiChangList.htm";
+					break;
+			} 
+			case "2":	
+			{ 
+				url = "../Check/RLZY_ChouChaList.htm";
+				break;
+			} 
+			case "3":	
+			{ 
+				url = "../Check/RLZY_NianDuList.htm";
+				break;
+			} 	
+		}
+			
+		top.mainFrame.location.replace(url);
+	}
+	
+</script>
+</head>
+<body style="margin-top:1px;margin-bottom:1px;margin-left:1px;margin-right:1px">
+<table width="100%"  height="100%" border="0" align="center" cellpadding="0" bgcolor="#83adda" cellspacing="4">
+	<tr> 
+		<td valign="top"> 
+			<table width="100%" height="100%" border="0" cellpadding="0" cellspacing="1" bgcolor="#002D96">
+				<tr> 
+					<td valign="top" bgcolor="#FFFFFF">
+			
+					<table width="100%" border="0" cellspacing="0" cellpadding="2">
+					  <tr> 
+						<td width="26%" height="41" align="center"><img src="../Images/Tree_Title_Icon.jpg" width="30" height="30"></td>
+						<td width="74%"><font color="#CC0000"><strong>人力资源专业考核</strong></font></td>
+					  </tr>
+					</table>
+            
+					<table class="TreeMenu" width="100%" border="0" cellspacing="0" cellpadding="4">
+					 <!-- 树型菜单开始 -->
+					 
+					  <tr> 
+						<td width="26%" align="right"><img src="../Images/Tree_Node_Icon.jpg" width="9" height="9"></td>
+						<td width="74%"><a href="#" onClick="goPage('1');">日常考核</a></td>
+					  </tr>
+					  
+									 <tr> 
+						<td align="right"><img src="../Images/Tree_Node_Icon.jpg" width="9" height="9"></td>
+						<td><a href="#" onClick="goPage('2');">抽查考核</a></td>
+					  </tr> 
+					  <tr> 
+						<td align="right"><img src="../Images/Tree_Node_Icon.jpg" width="9" height="9"></td>
+						<td><a href="#" onClick="goPage('3');">年度各处专业考核</a></td>
+					  </tr>
+					</table>
+					<!-- 树型菜单结束 --> 
+            
+          </td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table>
+</body>
+</html>
+<SCRIPT Language=VBScript><!--
+
+//--></SCRIPT>

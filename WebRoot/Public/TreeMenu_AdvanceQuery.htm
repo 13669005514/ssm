@@ -1,0 +1,157 @@
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<title>无标题文档</title>
+<link href="../Css/Style.css" type="text/css" rel="stylesheet">
+<link href="../Css/xtree.css" type="text/css" rel="stylesheet">
+<script type="text/javascript" src="../JS/xtree.js" ></script>
+<script type="text/javascript" src="../JS/xtree2.js" ></script>
+
+
+<script language="javascript">
+	
+	var curColCode;
+	var curColName;
+	var curCodeName;
+	var curIsCode;
+	var curTableName;
+	
+	function nodeOnClick(colCode,colName,codeName,isCode,tableName)
+	{
+		curColCode = colCode;
+	 	curColName = colName;
+		curCodeName = codeName;
+		curIsCode = isCode;
+		curTableName = tableName;
+		ShowMenu(MenuItem,event.clientX,event.clientY,120,55);
+		
+	}	
+	
+	//弹出菜单
+	var oPopup = window.createPopup();
+	function ShowMenu(WhichOne,Xpos,Ypos,Width,Height) 
+	{	
+	
+	//	Xpos = document.body.scrollLeft + event.clientX - event.offsetX -3;
+	//	Ypos = document.body.scrollTop + event.clientY - event.offsetY + Ypos;
+	
+		oPopup.document.body.style.backgroundColor = "#FFFFFF";
+		oPopup.document.body.innerHTML = WhichOne.innerHTML;
+		
+		oPopup.show(Xpos,Ypos,Width,Height,document.body);
+		
+		
+	}
+		
+	function addToCondition()
+	{
+		top.ConditionSettingFrame.AddCondition(curColCode,curColName,curCodeName,curIsCode,curTableName);
+	}
+	
+	function addToDisplay()
+	{
+		top.ConditionSettingFrame.AddDisplayCol(curColCode,curColName,curTableName);
+	}
+
+</script>
+</head>
+<body style="margin-top:1px;margin-bottom:1px;margin-left:1px;margin-right:1px">
+
+<table width="100%"  height="100%" border="0" align="center" cellpadding="0" bgcolor="#6487DC" cellspacing="4">
+	<tr> 
+		<td valign="top"> 
+			<table width="100%" height="100%" border="0" cellpadding="0" cellspacing="1" bgcolor="#002D96">
+				<tr> 
+					<td valign="top" bgcolor="#FFFFFF">
+					    <table border="0" cellpadding="0" cellspacing="0" width="100%">
+                            <tr>
+                                <td  height="22" valign="middle" bgcolor="#f1f1f1">&nbsp;&nbsp;<font color="#CC0000"><strong>表列选择</strong></font></td>
+                                <td height="22" valign="middle" bgcolor="#f1f1f1">&nbsp;</td>
+                            </tr>
+                        </table>
+						<table	border="0" cellpadding="4" cellspacing="0" width="100%">
+							<tr>
+								<td>
+									  <script src="../JS/treeAdvanceQuery.js"></script>
+
+								</td>
+							</tr>
+						</table>		
+                     </td>
+						
+				</tr>
+				
+			</table>
+		</td>
+	</tr>
+</table>	
+
+<div id="MenuItem" style="position: absolute; display: none;" >
+	<div onContextMenu="return false;" onselectstart="return false;" ondragstart="return false" >
+	<table bgcolor="#FFFFFF" width="100%" cellpadding="2" cellspacing="2" border="0" style="border: 1px solid #00349A;">
+	<tr>
+		<td onClick="parent.addToCondition();parent.oPopup.hide();" 
+				style=" padding-left : 8px; 
+						padding-right : 8px; 
+						border : 1px solid #F3F3EE; 
+						font : 9pt 宋体; 
+						color : #01259F; 
+						cursor : hand;" 
+				onmouseover="this.style.paddingleft = '15px'; 
+							this.style.paddingright = '5px'; 
+							this.style.border = '1px solid #468BC7'; 
+							this.style.backgroundColor = '#C0D8EE'; 
+							this.style.font = '9pt 宋体'; 
+							this.style.color = '#CF3300'; 
+							this.style.cursor = 'hand';" 
+				onmouseout="this.style.paddingleft = '15px'; 
+							this.style.paddingright = '5px'; 
+							this.style.border = '1px solid #FCFCF8'; 
+							this.style.backgroundColor = '#FCFCF8';
+							this.style.font =  '9pt 宋体'; 
+							this.style.color = '#01259F'; 
+							this.style.cursor = 'hand';"><img src="../images/Menu_Icon_AddCondition.gif" align="absmiddle">&nbsp;添加到条件列</td>
+	</tr>
+	<!-- 分隔条 -->
+	
+	<tr>
+		<td bgcolor="#FCFCF8">
+			<table width="100%" cellpadding="0" cellspacing="0" border="0">
+				<tr>
+					<td background="Images/Menu_Divider_Horizontal.gif"><img src="../Images/Menu_Divider_Horizontal.gif" width="1" height="1" border="0"></td>
+				</tr>
+			</table>
+		</td>
+	</tr>
+	
+	<tr>
+		<td onClick="parent.addToDisplay();parent.oPopup.hide();" 
+				style=" padding-left : 8px; 
+						padding-right : 8px; 
+						border : 1px solid #F3F3EE; 
+						font : 9pt 宋体; 
+						color : #01259F; 
+						cursor : hand;" 
+				onmouseover="this.style.paddingleft = '15px'; 
+							this.style.paddingright = '5px'; 
+							this.style.border = '1px solid #468BC7'; 
+							this.style.backgroundColor = '#C0D8EE'; 
+							this.style.font = '9pt 宋体'; 
+							this.style.color = '#CF3300'; 
+							this.style.cursor = 'hand';" 
+				onmouseout="this.style.paddingleft = '15px'; 
+							this.style.paddingright = '5px'; 
+							this.style.border = '1px solid #FCFCF8'; 
+							this.style.backgroundColor = '#FCFCF8';
+							this.style.font =  '9pt 宋体'; 
+							this.style.color = '#01259F'; 
+							this.style.cursor = 'hand';"><img src="../images/Menu_Icon_AddDisplay.gif" align="absmiddle">&nbsp;添加到显示列
+			</td>
+		</tr>
+	</table>
+</div>
+</Div>
+</body>
+</html>
+<SCRIPT Language=VBScript><!--
+
+//--></SCRIPT>

@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+		<!--以移动设备为优先-->
+		<meta name="viewport" content="width=device-width, initial-scale=1,user-scalable=no">
+		<!--引入css文件   -->
+		<link rel="stylesheet" href="bootstrap-3.3.7-dist/css/bootstrap.min.css" />
+		<link rel="stylesheet" href="css/some.css" />
+			
+		<!--引入jquery-->
+		<script type="text/javascript" src="bootstrap-3.3.7-dist/js/jquery-1.9.1.min.js"></script>
+		<!--引入bootstrap.js文件-->
+		<script type="text/javascript" src="bootstrap-3.3.7-dist/js/bootstrap.min.js"></script>
+		<style type="text/css">
+			.cdiv01{
+			    background-color:#F9F9F9;
+			    color:#000000;
+			    clear:both;
+			    width: 90%;
+			    text-align:center;
+			    padding:5px; 
+			}
+			.cdiv02{
+			    background-color:#C9E2B3;
+			    color:#000000;
+			    clear:both;
+			    width: 90%;
+			    padding:5px; 
+			}
+			.cdiv03{
+			    background-color:#C9E2B3;
+			    color:#000000;
+			    clear:both;
+			    width: 90%;
+			    padding:5px; 
+			}
+			.cdiv04{
+			    background-color:#CE8483;
+			    color:#000000;
+			    clear:both;
+			    width: 90%;
+			    padding:5px; 
+			}
+			.cp01{
+				
+			    color:#000000;
+			    font-family: "微软雅黑";
+			    font-size: 20px;
+			    text-align: left;
+			    line-height:26px;
+			    text-indent:25px;
+			    clear:both;
+			    width: 100%;
+			    padding:5px; 
+			}
+			.csp01{
+				font-family: "宋体";
+				font-size: 26px;
+				
+			}
+			.csp02{
+				font-family: "微软雅黑";
+				font-size: 14px;
+				line-height:26px;
+				float:right;
+			    
+			
+			}
+			.from01{
+				width: 60%;
+				height: 300px;
+				
+			}
+		</style>
+		<script type="text/javascript">
+		
+			$(function  () {
+				$("#img01").bind("click",function() {
+					var hrf=$("#h301").text();
+					hrf=parseInt(hrf)+1;
+					$.ajax({
+					   type: "POST",
+					   url: "some.php",
+					   data: "zcount="+hrf,
+					   success: function(msg){
+					   $("#h301").text(hrf);
+				   }
+				});
+					
+					
+				})
+			})
+		</script>
+	</head>
+	<body>
+		<div id="header" class="collapse navbar-collapse ">
+			<ul class="nav navbar-nav">
+				<li>&emsp;</li>
+				<li>&emsp;</li>
+				<li><img src="img/logo (1).png"/> </li>
+				<li>&emsp;</li>
+				<li>&emsp;</li>
+				<li><a href="index.html">首页</a></li>
+				<li>&emsp;</li>
+				<li><a>国内</a></li>
+				<li>&emsp;</li>
+				<li><a>世界</a></li>
+				<li>&emsp;</li>
+				<li><a>热点</a></li>
+				<li>&emsp;</li>
+				<li><a>关于</a></li>
+				<li>&emsp;&emsp;&emsp;&emsp;&emsp;</li>
+				<li>&emsp;&emsp;&emsp;&emsp;&emsp;</li>
+				<li>&emsp;&emsp;&emsp;&emsp;&emsp;</li>
+				<li>&emsp;&emsp;&emsp;&emsp;&emsp;</li>
+				<li><a href="login.html">登录</a></li>
+				<li>&emsp;</li>
+				<li><a href="registered.html">注册</a></li>
+			</ul>
+		</div>
+		
+		<div id="nav">
+			<img src="img/logo.png" />&emsp;
+			<div class="panel panel-default">
+	   			 <div class="panel-heading">
+			   		<h3 class="panel-title">
+			                    论坛公告
+			        </h3>
+			    </div>
+			    <div class="panel-body">
+			           论坛开放倒计时7天
+		    	</div>
+			</div>
+			<div class="panel panel-default">
+	   			 <div class="panel-heading">
+			   		<h3 class="panel-title">
+			                    热帖
+			        </h3>
+			    </div>
+			    <div class="panel-body">
+			                  面板内容
+		    	</div>
+			</div>
+			<div class="panel panel-default">
+	   			 <div class="panel-heading">
+			   		<h3 class="panel-title">
+			           	  发帖达人       
+			        </h3>
+			    </div>
+			    <div class="panel-body">
+			                  面板内容
+		    	</div>
+			</div>
+		</div>
+		
+		<div id="section">
+			<div class="right01">
+					<ul class="nav navbar-nav">
+						<li><a>煮酒论天</a></li>
+						<li>&emsp;</li>
+						<li><a>情感天地</a></li>
+						<li>&emsp;</li>
+						<li><a>时尚资讯</a></li>
+						<li>&emsp;</li>
+						<li><a>数码科技</a></li>
+						<li>&emsp;</li>
+						<li><a>游戏地带</a></li>
+						<li>&emsp;</li>
+						<li><a>灌水专区</a></li>
+						<li>&emsp;</li>
+					</ul>
+			</div><br /><br />
+			  <hr />
+			 <div class="">
+			 	<h2 class="cdiv01">欢迎回来 张三</h2>
+			 	<br />
+			 	<form action="UploadContext.action" method="post">
+			 		<label for="name">标题:</label>
+			 		<input type="text" class="form-control" name="title" /><br />
+			 		<label for="name">内容:</label>
+    				<textarea class="form-control" rows="3" name="content"></textarea><br />
+    				<label for="name">归类:</label>
+    				<select class="form-control" name="category">
+					  <option value="煮酒天地">煮酒天地</option>
+					  <option value="情感天地">情感天地</option>
+					  <option value="时尚资讯">时尚资讯</option>
+					  <option value="数码科技">数码科技</option>
+					  <option value="游戏地带">游戏地带</option>
+					  <option value="灌水专区">灌水专区</option>
+					</select>
+					<br />
+					<input type="submit" value="发布"  class="btn btn-primary btn-lg btt"/>
+			        <input type="reset" value="重置"class="btn btn-primary btn-lg btt"/>
+			 	</form>
+			 </div> 
+		   </div>
+		<div id="footer">
+			Copyright W3School.com.cn
+		</div>
+	</body>
+</html>

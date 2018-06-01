@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>注册</title>
+		<!--以移动设备为优先-->
+		<meta name="viewport" content="width=device-width, initial-scale=1,user-scalable=no">
+		<!--引入css文件   -->
+		<link rel="stylesheet" href="bootstrap-3.3.7-dist/css/bootstrap.min.css" />
+		<link rel="stylesheet" href="css/some.css" />
+			
+		<!--引入jquery-->
+		<script type="text/javascript" src="bootstrap-3.3.7-dist/js/jquery-1.9.1.min.js"></script>
+		<!--引入bootstrap.js文件-->
+		<script type="text/javascript" src="bootstrap-3.3.7-dist/js/bootstrap.min.js"></script>
+		<style type="text/css">
+			.div01{
+				font-size: 26px;
+				
+			}
+			
+		</style>
+		<script type="text/javascript">
+			String.prototype.trim2=function(){
+				return this.replace(/^\s+/,"").replace(/\s+$/,"");					
+			};
+			function getname (name) {
+				var flag=false;
+				var username=name.trim2();
+				var nameErr=document.getElementById("nameErr");
+				if (username=="") {
+					nameErr.innerHTML="<font color='red'>用户名不能为空</font>";
+					flag=false;
+				}else if (username.length<3||username.length>9) {
+					nameErr.innerHTML="<font color='red'>用户名的长度为3--9位</font>";
+					flag=false;
+				}else{
+					nameErr.innerHTML="";
+					flag=true;
+				}
+				return flag;
+			}
+			function clearname() {
+				var nameErr=document.getElementById("nameErr");
+				nameErr.innerHTML="";
+			}
+			function getword (word) {
+				var flag=false;
+				var err=document.getElementById("wordErr");
+				if (word=="") {
+					err.innerHTML="密码不能为空";
+					flag=false;
+				} else if(word.length<6||word.length>12){
+					err.innerHTML="密码长度为6-12位";
+					flag=false;
+				}
+				else{
+					err.innerHTML="";
+					flag=true;
+				}
+				return flag;
+			}
+			function  chearword () {
+				err=document.getElementById("wordErr");
+				err.innerHTML="";
+			}
+			
+			function  chearnword () {
+				var nerr=document.getElementById("nwordErr");
+				nerr.innerHTML="";
+			}
+			function pass() {
+				var name=document.getElementById("name").value;
+				var word=document.getElementById("word").value;
+				if (getname(name)&&getword(word)) {
+					document.forms[0].submit();
+				}
+			}
+		</script>
+	</head>
+	<body>
+		<div id="header" class="collapse navbar-collapse ">
+			<ul class="nav navbar-nav">
+				<li>&emsp;</li>
+				<li>&emsp;</li>
+				<li><img src="img/logo (1).png"/> </li>
+				<li>&emsp;</li>
+				<li>&emsp;</li>
+				<li><a href="index.html">首页</a></li>
+				<li>&emsp;</li>
+				<li><a>国内</a></li>
+				<li>&emsp;</li>
+				<li><a>世界</a></li>
+				<li>&emsp;</li>
+				<li><a>热点</a></li>
+				<li>&emsp;</li>
+				<li><a>关于</a></li>
+				<li>&emsp;&emsp;&emsp;&emsp;&emsp;</li>
+				<li>&emsp;&emsp;&emsp;&emsp;&emsp;</li>
+				<li>&emsp;&emsp;&emsp;&emsp;&emsp;</li>
+				<li>&emsp;&emsp;&emsp;&emsp;&emsp;</li>
+				<li><a href="login.html">登录</a></li>
+				<li>&emsp;</li>
+				<li><a href="registered.html">注册</a></li>
+			</ul>
+		</div>
+		<center>
+		<div class="div01">
+		<form action="http://www.jd.com" method="post">
+			<div class="col-sm-5" >
+			用户名:<input type="text" name="user" 
+									  id="name"
+									  onblur="getname(this.value);"
+									  onfocus="clearname();"
+									  class="form-control input-lg"/>
+				   <span id="nameErr"></span>									  
+								
+			</div>
+				<br />
+				<br />
+				<br />
+				<br />
+				<br />
+			<div class="col-sm-5">
+			密码：<input type="password" name="password"
+									     id="word"
+										 onblur="getword(this.value);"
+										 onfocus="chearword();"
+										 class="form-control input-lg" />
+			     <span id="wordErr"></span>
+						             
+			</div>	
+				<br /><br /><br /><br /><br />
+		
+			<input type="button" value="登录" onclick="pass();" class="btn btn-block btn-success btn-lg btt"/>
+			<input type="reset" value="重置"class="btn btn-primary btn-block btn-lg btt"/>
+		</form>
+		</div>
+	</center>	
+	</body>
+</html>

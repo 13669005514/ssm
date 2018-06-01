@@ -1,0 +1,430 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.mapper.EmpsMapper" >
+  <resultMap id="BaseResultMap" type="com.pojo.Emps" >
+    <id column="id" property="id" jdbcType="INTEGER" />
+    <result column="name" property="name" jdbcType="VARCHAR" />
+    <result column="sex" property="sex" jdbcType="VARCHAR" />
+    <result column="jname" property="jname" jdbcType="VARCHAR" />
+    <result column="zname" property="zname" jdbcType="VARCHAR" />
+    <result column="number" property="number" jdbcType="INTEGER" />
+    <result column="adress" property="adress" jdbcType="VARCHAR" />
+    <result column="idCard" property="idcard" jdbcType="INTEGER" />
+    <result column="jkzk" property="jkzk" jdbcType="VARCHAR" />
+    <result column="date" property="date" jdbcType="VARCHAR" />
+    <result column="mz" property="mz" jdbcType="VARCHAR" />
+    <result column="zzmm" property="zzmm" jdbcType="VARCHAR" />
+    <result column="xqah" property="xqah" jdbcType="VARCHAR" />
+    <result column="jg" property="jg" jdbcType="VARCHAR" />
+    <result column="hjxz" property="hjxz" jdbcType="VARCHAR" />
+    <result column="homeAdress" property="homeadress" jdbcType="VARCHAR" />
+    <result column="rdate" property="rdate" jdbcType="VARCHAR" />
+    <result column="gzns" property="gzns" jdbcType="INTEGER" />
+    <result column="sdate" property="sdate" jdbcType="INTEGER" />
+  </resultMap>
+  <sql id="Example_Where_Clause" >
+    <where >
+      <foreach collection="oredCriteria" item="criteria" separator="or" >
+        <if test="criteria.valid" >
+          <trim prefix="(" suffix=")" prefixOverrides="and" >
+            <foreach collection="criteria.criteria" item="criterion" >
+              <choose >
+                <when test="criterion.noValue" >
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue" >
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue" >
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue" >
+                  and ${criterion.condition}
+                  <foreach collection="criterion.value" item="listItem" open="(" close=")" separator="," >
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Update_By_Example_Where_Clause" >
+    <where >
+      <foreach collection="example.oredCriteria" item="criteria" separator="or" >
+        <if test="criteria.valid" >
+          <trim prefix="(" suffix=")" prefixOverrides="and" >
+            <foreach collection="criteria.criteria" item="criterion" >
+              <choose >
+                <when test="criterion.noValue" >
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue" >
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue" >
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue" >
+                  and ${criterion.condition}
+                  <foreach collection="criterion.value" item="listItem" open="(" close=")" separator="," >
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Base_Column_List" >
+    id, name, sex, jname, zname, number, adress, idCard, jkzk, date, mz, zzmm, xqah, 
+    jg, hjxz, homeAdress, rdate, gzns, sdate
+  </sql>
+  <select id="selectByExample" resultMap="BaseResultMap" parameterType="com.pojo.EmpsExample" >
+    select
+    <if test="distinct" >
+      distinct
+    </if>
+    <include refid="Base_Column_List" />
+    from emps
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null" >
+      order by ${orderByClause}
+    </if>
+  </select>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
+    select 
+    <include refid="Base_Column_List" />
+    from emps
+    where id = #{id,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
+    delete from emps
+    where id = #{id,jdbcType=INTEGER}
+  </delete>
+  <delete id="deleteByExample" parameterType="com.pojo.EmpsExample" >
+    delete from emps
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+  </delete>
+  <insert id="insert" parameterType="com.pojo.Emps" >
+    insert into emps (id, name, sex, 
+      jname, zname, number, 
+      adress, idCard, jkzk, 
+      date, mz, zzmm, xqah, 
+      jg, hjxz, homeAdress, 
+      rdate, gzns, sdate)
+    values (#{id,jdbcType=INTEGER}, #{name,jdbcType=VARCHAR}, #{sex,jdbcType=VARCHAR}, 
+      #{jname,jdbcType=VARCHAR}, #{zname,jdbcType=VARCHAR}, #{number,jdbcType=INTEGER}, 
+      #{adress,jdbcType=VARCHAR}, #{idcard,jdbcType=INTEGER}, #{jkzk,jdbcType=VARCHAR}, 
+      #{date,jdbcType=VARCHAR}, #{mz,jdbcType=VARCHAR}, #{zzmm,jdbcType=VARCHAR}, #{xqah,jdbcType=VARCHAR}, 
+      #{jg,jdbcType=VARCHAR}, #{hjxz,jdbcType=VARCHAR}, #{homeadress,jdbcType=VARCHAR}, 
+      #{rdate,jdbcType=VARCHAR}, #{gzns,jdbcType=INTEGER}, #{sdate,jdbcType=INTEGER})
+  </insert>
+  <insert id="insertSelective" parameterType="com.pojo.Emps" >
+    insert into emps
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        id,
+      </if>
+      <if test="name != null" >
+        name,
+      </if>
+      <if test="sex != null" >
+        sex,
+      </if>
+      <if test="jname != null" >
+        jname,
+      </if>
+      <if test="zname != null" >
+        zname,
+      </if>
+      <if test="number != null" >
+        number,
+      </if>
+      <if test="adress != null" >
+        adress,
+      </if>
+      <if test="idcard != null" >
+        idCard,
+      </if>
+      <if test="jkzk != null" >
+        jkzk,
+      </if>
+      <if test="date != null" >
+        date,
+      </if>
+      <if test="mz != null" >
+        mz,
+      </if>
+      <if test="zzmm != null" >
+        zzmm,
+      </if>
+      <if test="xqah != null" >
+        xqah,
+      </if>
+      <if test="jg != null" >
+        jg,
+      </if>
+      <if test="hjxz != null" >
+        hjxz,
+      </if>
+      <if test="homeadress != null" >
+        homeAdress,
+      </if>
+      <if test="rdate != null" >
+        rdate,
+      </if>
+      <if test="gzns != null" >
+        gzns,
+      </if>
+      <if test="sdate != null" >
+        sdate,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        #{id,jdbcType=INTEGER},
+      </if>
+      <if test="name != null" >
+        #{name,jdbcType=VARCHAR},
+      </if>
+      <if test="sex != null" >
+        #{sex,jdbcType=VARCHAR},
+      </if>
+      <if test="jname != null" >
+        #{jname,jdbcType=VARCHAR},
+      </if>
+      <if test="zname != null" >
+        #{zname,jdbcType=VARCHAR},
+      </if>
+      <if test="number != null" >
+        #{number,jdbcType=INTEGER},
+      </if>
+      <if test="adress != null" >
+        #{adress,jdbcType=VARCHAR},
+      </if>
+      <if test="idcard != null" >
+        #{idcard,jdbcType=INTEGER},
+      </if>
+      <if test="jkzk != null" >
+        #{jkzk,jdbcType=VARCHAR},
+      </if>
+      <if test="date != null" >
+        #{date,jdbcType=VARCHAR},
+      </if>
+      <if test="mz != null" >
+        #{mz,jdbcType=VARCHAR},
+      </if>
+      <if test="zzmm != null" >
+        #{zzmm,jdbcType=VARCHAR},
+      </if>
+      <if test="xqah != null" >
+        #{xqah,jdbcType=VARCHAR},
+      </if>
+      <if test="jg != null" >
+        #{jg,jdbcType=VARCHAR},
+      </if>
+      <if test="hjxz != null" >
+        #{hjxz,jdbcType=VARCHAR},
+      </if>
+      <if test="homeadress != null" >
+        #{homeadress,jdbcType=VARCHAR},
+      </if>
+      <if test="rdate != null" >
+        #{rdate,jdbcType=VARCHAR},
+      </if>
+      <if test="gzns != null" >
+        #{gzns,jdbcType=INTEGER},
+      </if>
+      <if test="sdate != null" >
+        #{sdate,jdbcType=INTEGER},
+      </if>
+    </trim>
+  </insert>
+  <select id="countByExample" parameterType="com.pojo.EmpsExample" resultType="java.lang.Integer" >
+    select count(*) from emps
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+  </select>
+  <update id="updateByExampleSelective" parameterType="map" >
+    update emps
+    <set >
+      <if test="record.id != null" >
+        id = #{record.id,jdbcType=INTEGER},
+      </if>
+      <if test="record.name != null" >
+        name = #{record.name,jdbcType=VARCHAR},
+      </if>
+      <if test="record.sex != null" >
+        sex = #{record.sex,jdbcType=VARCHAR},
+      </if>
+      <if test="record.jname != null" >
+        jname = #{record.jname,jdbcType=VARCHAR},
+      </if>
+      <if test="record.zname != null" >
+        zname = #{record.zname,jdbcType=VARCHAR},
+      </if>
+      <if test="record.number != null" >
+        number = #{record.number,jdbcType=INTEGER},
+      </if>
+      <if test="record.adress != null" >
+        adress = #{record.adress,jdbcType=VARCHAR},
+      </if>
+      <if test="record.idcard != null" >
+        idCard = #{record.idcard,jdbcType=INTEGER},
+      </if>
+      <if test="record.jkzk != null" >
+        jkzk = #{record.jkzk,jdbcType=VARCHAR},
+      </if>
+      <if test="record.date != null" >
+        date = #{record.date,jdbcType=VARCHAR},
+      </if>
+      <if test="record.mz != null" >
+        mz = #{record.mz,jdbcType=VARCHAR},
+      </if>
+      <if test="record.zzmm != null" >
+        zzmm = #{record.zzmm,jdbcType=VARCHAR},
+      </if>
+      <if test="record.xqah != null" >
+        xqah = #{record.xqah,jdbcType=VARCHAR},
+      </if>
+      <if test="record.jg != null" >
+        jg = #{record.jg,jdbcType=VARCHAR},
+      </if>
+      <if test="record.hjxz != null" >
+        hjxz = #{record.hjxz,jdbcType=VARCHAR},
+      </if>
+      <if test="record.homeadress != null" >
+        homeAdress = #{record.homeadress,jdbcType=VARCHAR},
+      </if>
+      <if test="record.rdate != null" >
+        rdate = #{record.rdate,jdbcType=VARCHAR},
+      </if>
+      <if test="record.gzns != null" >
+        gzns = #{record.gzns,jdbcType=INTEGER},
+      </if>
+      <if test="record.sdate != null" >
+        sdate = #{record.sdate,jdbcType=INTEGER},
+      </if>
+    </set>
+    <if test="_parameter != null" >
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByExample" parameterType="map" >
+    update emps
+    set id = #{record.id,jdbcType=INTEGER},
+      name = #{record.name,jdbcType=VARCHAR},
+      sex = #{record.sex,jdbcType=VARCHAR},
+      jname = #{record.jname,jdbcType=VARCHAR},
+      zname = #{record.zname,jdbcType=VARCHAR},
+      number = #{record.number,jdbcType=INTEGER},
+      adress = #{record.adress,jdbcType=VARCHAR},
+      idCard = #{record.idcard,jdbcType=INTEGER},
+      jkzk = #{record.jkzk,jdbcType=VARCHAR},
+      date = #{record.date,jdbcType=VARCHAR},
+      mz = #{record.mz,jdbcType=VARCHAR},
+      zzmm = #{record.zzmm,jdbcType=VARCHAR},
+      xqah = #{record.xqah,jdbcType=VARCHAR},
+      jg = #{record.jg,jdbcType=VARCHAR},
+      hjxz = #{record.hjxz,jdbcType=VARCHAR},
+      homeAdress = #{record.homeadress,jdbcType=VARCHAR},
+      rdate = #{record.rdate,jdbcType=VARCHAR},
+      gzns = #{record.gzns,jdbcType=INTEGER},
+      sdate = #{record.sdate,jdbcType=INTEGER}
+    <if test="_parameter != null" >
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByPrimaryKeySelective" parameterType="com.pojo.Emps" >
+    update emps
+    <set >
+      <if test="name != null" >
+        name = #{name,jdbcType=VARCHAR},
+      </if>
+      <if test="sex != null" >
+        sex = #{sex,jdbcType=VARCHAR},
+      </if>
+      <if test="jname != null" >
+        jname = #{jname,jdbcType=VARCHAR},
+      </if>
+      <if test="zname != null" >
+        zname = #{zname,jdbcType=VARCHAR},
+      </if>
+      <if test="number != null" >
+        number = #{number,jdbcType=INTEGER},
+      </if>
+      <if test="adress != null" >
+        adress = #{adress,jdbcType=VARCHAR},
+      </if>
+      <if test="idcard != null" >
+        idCard = #{idcard,jdbcType=INTEGER},
+      </if>
+      <if test="jkzk != null" >
+        jkzk = #{jkzk,jdbcType=VARCHAR},
+      </if>
+      <if test="date != null" >
+        date = #{date,jdbcType=VARCHAR},
+      </if>
+      <if test="mz != null" >
+        mz = #{mz,jdbcType=VARCHAR},
+      </if>
+      <if test="zzmm != null" >
+        zzmm = #{zzmm,jdbcType=VARCHAR},
+      </if>
+      <if test="xqah != null" >
+        xqah = #{xqah,jdbcType=VARCHAR},
+      </if>
+      <if test="jg != null" >
+        jg = #{jg,jdbcType=VARCHAR},
+      </if>
+      <if test="hjxz != null" >
+        hjxz = #{hjxz,jdbcType=VARCHAR},
+      </if>
+      <if test="homeadress != null" >
+        homeAdress = #{homeadress,jdbcType=VARCHAR},
+      </if>
+      <if test="rdate != null" >
+        rdate = #{rdate,jdbcType=VARCHAR},
+      </if>
+      <if test="gzns != null" >
+        gzns = #{gzns,jdbcType=INTEGER},
+      </if>
+      <if test="sdate != null" >
+        sdate = #{sdate,jdbcType=INTEGER},
+      </if>
+    </set>
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.pojo.Emps" >
+    update emps
+    set name = #{name,jdbcType=VARCHAR},
+      sex = #{sex,jdbcType=VARCHAR},
+      jname = #{jname,jdbcType=VARCHAR},
+      zname = #{zname,jdbcType=VARCHAR},
+      number = #{number,jdbcType=INTEGER},
+      adress = #{adress,jdbcType=VARCHAR},
+      idCard = #{idcard,jdbcType=INTEGER},
+      jkzk = #{jkzk,jdbcType=VARCHAR},
+      date = #{date,jdbcType=VARCHAR},
+      mz = #{mz,jdbcType=VARCHAR},
+      zzmm = #{zzmm,jdbcType=VARCHAR},
+      xqah = #{xqah,jdbcType=VARCHAR},
+      jg = #{jg,jdbcType=VARCHAR},
+      hjxz = #{hjxz,jdbcType=VARCHAR},
+      homeAdress = #{homeadress,jdbcType=VARCHAR},
+      rdate = #{rdate,jdbcType=VARCHAR},
+      gzns = #{gzns,jdbcType=INTEGER},
+      sdate = #{sdate,jdbcType=INTEGER}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+</mapper>

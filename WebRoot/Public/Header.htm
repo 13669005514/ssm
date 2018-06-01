@@ -1,0 +1,1041 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>天津市引滦入津水源保护人力资源管理信息系统</title>
+<link href="../Css/Style.css" type="text/css" rel="stylesheet">
+<script language="JavaScript" type="text/javascript">
+
+<!--
+	
+	var oPopup = window.createPopup();
+	function ShowMenu(WhichOne,Xpos,Ypos,Width,Height) 
+	{	
+	 
+		// Xpos = document.body.scrollLeft + event.clientX - event.offsetX -3;
+		Ypos = document.body.scrollTop + event.clientY - event.offsetY + Ypos;
+		oPopup.document.body.style.backgroundColor = "#FFFFFF";
+		oPopup.document.body.innerHTML = WhichOne.innerHTML;
+		
+		Xpos = Xpos - 35;
+		oPopup.show(Xpos,Ypos,Width,Height,document.body);
+	}
+	
+
+	
+	//返回主页
+	function goMain()
+	{
+		//top.leftFrame.location.replace("TreeMenu_Main.asp");
+		//top.mainFrame.location.replace("../MainPage.asp");
+		
+	}
+	
+	function logout()
+	{
+		//top.location.replace("../Login.asp");
+	}
+		
+
+ function goEmpInfo()
+ {
+	top.leftFrame.location.replace("../Public/Tree.htm")
+ 	top.mainFrame.location.replace("../Emp_Info/EmpActiveList.htm");
+ }
+ function goContractList()
+ {
+  top.leftFrame.location.replace("../Public/TreeMenu_Contract.htm");
+ 	top.mainFrame.location.replace("../Contract/ActiveList.htm");
+ }
+ function goEmpEdu()
+ {
+ 	
+ 	top.leftFrame.location.replace("../Public/TreeMenu_Education.htm");
+ 	top.mainFrame.location.replace("../Education/EduList.htm");
+ }
+ function goEmpEduPlan()
+ {
+ 	
+ 	top.leftFrame.location.replace("../Public/TreeMenu_EducationPlan.htm");
+ 	top.mainFrame.location.replace("../Education/PlanClassList.htm");
+ }
+ function goEmpEduFact()
+ {
+ 	
+ 	top.leftFrame.location.replace("../Public/TreeMenu_EducationFact.htm");
+ 	top.mainFrame.location.replace("../Education/FactClassList.htm");
+ }
+ 
+ function goEmpEduTeacher()
+ {
+ 	
+ 	top.leftFrame.location.replace("../Public/TreeMenu_EducationTeacher.htm");
+ 	top.mainFrame.location.replace("../Education/TeacherList.htm");
+ }
+ 
+ function goTechincal()
+ {
+ 	
+ 	top.leftFrame.location.replace("../Public/TreeMenu_Technical.htm");
+ 	top.mainFrame.location.replace("../EmpTechnical/TechnicalTitleList.htm");
+ }
+ 
+ function goTemp()
+ {
+ 	
+ 	top.leftFrame.location.replace("../Public/Tree.htm");
+ 	top.mainFrame.location.replace("../Test/List.htm");
+ }
+ 
+ function goRetire()
+ {
+ 	top.leftFrame.location.replace("../Public/TreeMenu_Retire.htm");
+ 	top.mainFrame.location.replace("../Retire/RetireFormalList.htm");
+ }
+ 
+ function goBeforeRetire()
+{
+ 	top.leftFrame.location.replace("../Public/TreeMenu_Retire.htm");
+ 	top.mainFrame.location.replace("../Retire/RetireBeforeList.htm");
+ }
+ 
+  function goRetired()
+{
+ 	top.leftFrame.location.replace("../Public/TreeMenu_Retire.htm");
+ 	top.mainFrame.location.replace("../Retire/RetiredFormalList.htm");
+ }
+ 
+ function goEmpRemove()
+{
+ 	top.leftFrame.location.replace("../Public/TreeMenu_EmpChange.htm");
+ 	top.mainFrame.location.replace("../EmpChange/EmpRemove.htm");
+ }
+ 
+ function goEmpResignation()
+{
+ 	top.leftFrame.location.replace("../Public/TreeMenu_EmpChange.htm");
+ 	top.mainFrame.location.replace("../EmpChange/EmpResignationList.htm");
+ }
+ 
+ function goEmpDismissal()
+{
+ 	top.leftFrame.location.replace("../Public/TreeMenu_EmpChange.htm");
+ 	top.mainFrame.location.replace("../EmpChange/EmpDismissalList.htm");
+ }
+ 
+ function goSalary()
+ {
+ 	top.leftFrame.location.replace("../Public/TreeMenu_SalarySet.htm");
+ 	top.mainFrame.location.replace("../Salary/EmpSalary.htm");
+ }
+ 
+  function goSalaryMaintain()
+ {
+ 	top.leftFrame.location.replace("../Public/TreeMenu_SalaryMaintain.htm");
+ 	top.mainFrame.location.replace("../Salary/SalaryMaintain.htm");
+ }
+ 
+  function goSalarySet()
+ {
+ 	top.leftFrame.location.replace("../Public/TreeMenu_SalarySet.htm");
+ 	top.mainFrame.location.replace("../Salary/SalarySet.htm");
+ }
+ 
+ function goStructure()
+ {
+ 	top.leftFrame.location.replace("../Public/TreeMenu_EmpStructure.htm");
+ 	top.mainFrame.location.replace("../Structure/EmpStructureFList.htm");
+ }
+ 
+ function goAttendance()
+ {
+	top.leftFrame.location.replace("../Public/TreeMenu_Attendance.htm");
+	top.mainFrame.location.replace("../Attendance/AttendanceBookList.htm");
+ }
+ 
+ function goLeave()
+ {
+	top.leftFrame.location.replace("../Public/TreeMenu_Leave.htm");
+	top.mainFrame.location.replace("../Attendance/LeaveList.htm");
+ }
+ function goADVQuery()
+ {
+ 	top.leftFrame.location.replace("../Public/TreeMenu_AdvanceQuery.htm");
+ 	top.mainFrame.location.replace("../AdvanceQuery/AdvanceQuery.htm");
+ }
+ 
+ function goRLZYCheck()
+ {
+ 		top.leftFrame.location.replace("../Public/TreeMenu_RLZYCheck.htm");
+ 		top.mainFrame.location.replace("../Check/RLZY_RiChangList.htm");
+ }
+ 
+  function goDeptCheck()
+ {
+ 		top.leftFrame.location.replace("../Public/TreeMenu_DeptCheck.htm");
+ 		top.mainFrame.location.replace("../Check/DeptQuarterList.htm");
+ }
+ 
+  function goEmpCheck()
+ {
+ 		top.leftFrame.location.replace("../Public/TreeMenu_EmpCheck.htm");
+ 		top.mainFrame.location.replace("../Check/EmpQuarterList.htm");
+ }
+ 
+ function goEmpAgeAnalyse()
+ {
+ 	top.leftFrame.location.replace("../Public/TreeMenu_AgeAnalyse.htm");
+ 	top.mainFrame.location.replace("../StatAnalyse/EmpAgeAnalyse.htm");
+ }
+ 
+ function goEducationAnalyse()
+ {
+ 	top.leftFrame.location.replace("../Public/TreeMenu_AgeAnalyse.htm");
+ 	top.mainFrame.location.replace("../StatAnalyse/EmpEducationAnalyse.htm");
+ }
+ 
+ function goTechnicalAnalyse()
+ {
+ 	top.leftFrame.location.replace("../Public/TreeMenu_AgeAnalyse.htm");
+ 	top.mainFrame.location.replace("../StatAnalyse/EmpTechnicalAnalyse.htm");
+ }
+ 
+ function goStatEmpIntegration()
+ {
+ 	top.leftFrame.location.replace("../Public/TreeMenu_AgeAnalyse.htm");
+ 	top.mainFrame.location.replace("../StatAnalyse/EmpIntegrationAnalyse.htm");
+ }
+ 
+// -->		
+
+</script>
+
+</head>
+
+<body>
+<table width="100%" height="62" border="0" cellpadding="0" cellspacing="0" background="../images/Header_Bg.gif">
+  <tr>
+    <td><img src="../images/Logo.gif" width="400" height="62" /></td>
+    <td>&nbsp;</td>
+  </tr>
+</table>
+<table width="100%" class="TabNavigateMenu" height="25" align="center" border="0" cellpadding="0" cellspacing="1">
+    <tr>
+		<td width="5" valign="middle" align="right"></td>
+    <td valign="middle">
+      <!--&nbsp;&nbsp;<a href="#" class="TopMenu">返回首页</a>-->&nbsp; 
+      <a  href="#" class="TopMenu" onClick="goEmpInfo();">员工信息</a>&nbsp;&nbsp; 
+			<a  href="#" class="TopMenu" onClick="goContractList();">劳动合同</a>&nbsp;&nbsp;
+			<a  href="#" class="TopMenu" onMouseDown="ShowMenu(MenuItem_Education,185,22,110,120);">教育培训</a>&nbsp;&nbsp; 
+			<a  href="#" class="TopMenu" onClick="goTechincal();">职称评定</a>&nbsp;&nbsp;
+			<a  href="#" class="TopMenu" onMouseDown="ShowMenu(MenuItem_Retire,317,22,110,88);">退休管理</a>&nbsp;&nbsp; 
+			<a  href="#" class="TopMenu" onMouseDown="ShowMenu(MenuItem_Check,382,22,120,88);">绩效考评</a>&nbsp;&nbsp; 
+			<a  href="#" class="TopMenu" onMouseDown="ShowMenu(MenuItem_Salary,452,22,110,88);">薪资管理</a>&nbsp;&nbsp; 
+			<a  href="#" class="TopMenu" onMouseDown="ShowMenu(MenuItem_Attendance,515,22,110,60);">考勤管理</a>&nbsp;&nbsp;
+			<a  href="#" class="TopMenu" onClick="goStructure();">组织机构</a>&nbsp;&nbsp;
+			<a  href="#" class="TopMenu" onMouseDown="ShowMenu(MenuItem_Reduce,645,22,110,88);">人员变动</a>&nbsp;&nbsp;
+			<a  href="#" class="TopMenu" onClick="goADVQuery();">高级查询</a>&nbsp;&nbsp;
+			<a  href="#" class="TopMenu" onClick="ShowMenu(MenuItem_Analyse,780,22,130,126)">统计分析</a>&nbsp;&nbsp; 
+			<a  href="#" class="TopMenu" onClick="alert('此模块暂无。');">系统维护</a> 
+			<!--<a  href="#" class="TopMenu" onClick="goTemp();">临时</a>-->
+		</td>
+     <td width="100" valign="middle" align="center">
+					<a  href="#" class="LoginName">注销</a>&nbsp;<font class="LoginName">张三</font>
+		</td>
+    </tr>
+</table>
+<!-- 教育培训管理子菜单 -->
+<div id="MenuItem_Education" style="position: absolute; display: none;">
+<table bgcolor="#FFFFFF" width="100%" cellpadding="2" cellspacing="2" border="0" style="border: 1px solid #00349A;">
+	<tr>
+		<td onClick="parent.goEmpEdu();parent.oPopup.hide();" 
+				style=" padding-left : 8px; 
+						padding-right : 8px; 
+						border : 1px solid #F3F3EE; 
+						font : 9pt 宋体; 
+						color : #01259F; 
+						cursor : hand;" 
+				onmouseover="this.style.paddingleft = '15px'; 
+							this.style.paddingright = '5px'; 
+							this.style.border = '1px solid #468BC7'; 
+							this.style.backgroundColor = '#C0D8EE'; 
+							this.style.font = '9pt 宋体'; 
+							this.style.color = '#CF3300'; 
+							this.style.cursor = 'hand';" 
+				onmouseout="this.style.paddingleft = '15px'; 
+							this.style.paddingright = '5px'; 
+							this.style.border = '1px solid #FCFCF8'; 
+							this.style.backgroundColor = '#FCFCF8';
+							this.style.font =  '9pt 宋体'; 
+							this.style.color = '#01259F'; 
+							this.style.cursor = 'hand';">员工教育管理</td>
+	</tr>
+	<!-- 分隔条 -->
+	<tr>
+		<td bgcolor="#FCFCF8">
+			<table width="100%" cellpadding="0" cellspacing="0" border="0">
+				<tr>
+					<td background="../images/Top_Menu_Divider_Horizontal.gif"><img src="../images/Top_Menu_Divider_Horizontal.gif" width="1" height="2" border="0"></td>
+				</tr>
+			</table>
+		</td>
+	</tr>
+	<tr>
+		<td onClick="parent.goEmpEduPlan();parent.oPopup.hide();" 
+				style=" padding-left : 8px; 
+						padding-right : 8px; 
+						border : 1px solid #F3F3EE; 
+						font : 9pt 宋体; 
+						color : #01259F; 
+						cursor : hand;" 
+				onmouseover="this.style.paddingleft = '15px'; 
+							this.style.paddingright = '5px'; 
+							this.style.border = '1px solid #468BC7'; 
+							this.style.backgroundColor = '#C0D8EE'; 
+							this.style.font = '9pt 宋体'; 
+							this.style.color = '#CF3300'; 
+							this.style.cursor = 'hand';" 
+				onmouseout="this.style.paddingleft = '15px'; 
+							this.style.paddingright = '5px'; 
+							this.style.border = '1px solid #FCFCF8'; 
+							this.style.backgroundColor = '#FCFCF8';
+							this.style.font =  '9pt 宋体'; 
+							this.style.color = '#01259F'; 
+							this.style.cursor = 'hand';">培训计划管理</td>
+	</tr>
+	<!-- 分隔条 -->
+	<tr>
+		<td bgcolor="#FCFCF8">
+			<table width="100%" cellpadding="0" cellspacing="0" border="0">
+				<tr>
+					<td background="../images/Top_Menu_Divider_Horizontal.gif"><img src="../images/Top_Menu_Divider_Horizontal.gif" width="1" height="2" border="0"></td>
+				</tr>
+			</table>
+		</td>
+	</tr>
+	<tr>
+		<td onClick="parent.goEmpEduFact();parent.oPopup.hide();" 
+				style=" padding-left : 8px; 
+						padding-right : 8px; 
+						border : 1px solid #F3F3EE; 
+						font : 9pt 宋体; 
+						color : #01259F; 
+						cursor : hand;" 
+				onmouseover="this.style.paddingleft = '15px'; 
+							this.style.paddingright = '5px'; 
+							this.style.border = '1px solid #468BC7'; 
+							this.style.backgroundColor = '#C0D8EE'; 
+							this.style.font = '9pt 宋体'; 
+							this.style.color = '#CF3300'; 
+							this.style.cursor = 'hand';" 
+				onmouseout="this.style.paddingleft = '15px'; 
+							this.style.paddingright = '5px'; 
+							this.style.border = '1px solid #FCFCF8'; 
+							this.style.backgroundColor = '#FCFCF8';
+							this.style.font =  '9pt 宋体'; 
+							this.style.color = '#01259F'; 
+							this.style.cursor = 'hand';">培训办班管理</td>
+	</tr>
+	<!-- 分隔条 -->
+	<tr>
+		<td bgcolor="#FCFCF8">
+			<table width="100%" cellpadding="0" cellspacing="0" border="0">
+				<tr>
+					<td background="../images/Top_Menu_Divider_Horizontal.gif"><img src="../images/Top_Menu_Divider_Horizontal.gif" width="1" height="2" border="0"></td>
+				</tr>
+			</table>
+		</td>
+	</tr>
+	<tr>
+		<td onClick="parent.goEmpEduTeacher();parent.oPopup.hide();" 
+				style=" padding-left : 8px; 
+						padding-right : 8px; 
+						border : 1px solid #F3F3EE; 
+						font : 9pt 宋体; 
+						color : #01259F; 
+						cursor : hand;" 
+				onmouseover="this.style.paddingleft = '15px'; 
+							this.style.paddingright = '5px'; 
+							this.style.border = '1px solid #468BC7'; 
+							this.style.backgroundColor = '#C0D8EE'; 
+							this.style.font = '9pt 宋体'; 
+							this.style.color = '#CF3300'; 
+							this.style.cursor = 'hand';" 
+				onmouseout="this.style.paddingleft = '15px'; 
+							this.style.paddingright = '5px'; 
+							this.style.border = '1px solid #FCFCF8'; 
+							this.style.backgroundColor = '#FCFCF8';
+							this.style.font =  '9pt 宋体'; 
+							this.style.color = '#01259F'; 
+							this.style.cursor = 'hand';">培训教师管理</td>
+	</tr>
+	<!-- 分隔条 -->
+	<!--
+	<tr>
+		<td bgcolor="#FCFCF8">
+			<table width="100%" cellpadding="0" cellspacing="0" border="0">
+				<tr>
+					<td background="../images/Top_Menu_Divider_Horizontal.gif"><img src="../images/Top_Menu_Divider_Horizontal.gif" width="1" height="2" border="0"></td>
+				</tr>
+			</table>
+		</td>
+	</tr>
+	<tr>
+		<td onClick="parent.goFactClass();parent.oPopup.hide();" 
+				style=" padding-left : 8px; 
+						padding-right : 8px; 
+						border : 1px solid #F3F3EE; 
+						font : 9pt 宋体; 
+						color : #01259F; 
+						cursor : hand;" 
+				onmouseover="this.style.paddingleft = '15px'; 
+							this.style.paddingright = '5px'; 
+							this.style.border = '1px solid #468BC7'; 
+							this.style.backgroundColor = '#C0D8EE'; 
+							this.style.font = '9pt 宋体'; 
+							this.style.color = '#CF3300'; 
+							this.style.cursor = 'hand';" 
+				onmouseout="this.style.paddingleft = '15px'; 
+							this.style.paddingright = '5px'; 
+							this.style.border = '1px solid #FCFCF8'; 
+							this.style.backgroundColor = '#FCFCF8';
+							this.style.font =  '9pt 宋体'; 
+							this.style.color = '#01259F'; 
+							this.style.cursor = 'hand';">系统外培训管理</td>
+		
+	</tr>
+	-->
+	<!-- 分隔条 -->
+	<!--
+	<tr>
+		<td bgcolor="#FCFCF8">
+			<table width="100%" cellpadding="0" cellspacing="0" border="0">
+				<tr>
+					<td background="../images/Top_Menu_Divider_Horizontal.gif"><img src="../images/Top_Menu_Divider_Horizontal.gif" width="1" height="2" border="0"></td>
+				</tr>
+			</table>
+		</td>
+	</tr>
+		
+	<tr>
+		<td onClick="parent.goNet();parent.oPopup.hide();" 
+				style=" padding-left : 8px; 
+						padding-right : 8px; 
+						border : 1px solid #F3F3EE; 
+						font : 9pt 宋体; 
+						color : #01259F; 
+						cursor : hand;" 
+				onmouseover="this.style.paddingleft = '15px'; 
+							this.style.paddingright = '5px'; 
+							this.style.border = '1px solid #468BC7'; 
+							this.style.backgroundColor = '#C0D8EE'; 
+							this.style.font = '9pt 宋体'; 
+							this.style.color = '#CF3300'; 
+							this.style.cursor = 'hand';" 
+				onmouseout="this.style.paddingleft = '15px'; 
+							this.style.paddingright = '5px'; 
+							this.style.border = '1px solid #FCFCF8'; 
+							this.style.backgroundColor = '#FCFCF8';
+							this.style.font =  '9pt 宋体'; 
+							this.style.color = '#01259F'; 
+							this.style.cursor = 'hand';">员工培训情况</td>
+		
+	</tr>
+	-->
+</table>
+</div>
+<!-- 教育培训管理结束 -->
+
+<!-- 员工退休管理子菜单 -->
+<div id="MenuItem_Retire" style="position: absolute; display: none;">
+<table bgcolor="#FFFFFF" width="100%" cellpadding="2" cellspacing="2" border="0" style="border: 1px solid #00349A;">
+	<tr>
+		<td onClick="parent.goRetire();parent.oPopup.hide();" 
+				style=" padding-left : 8px; 
+						padding-right : 8px; 
+						border : 1px solid #F3F3EE; 
+						font : 9pt 宋体; 
+						color : #01259F; 
+						cursor : hand;" 
+				onmouseover="this.style.paddingleft = '15px'; 
+							this.style.paddingright = '5px'; 
+							this.style.border = '1px solid #468BC7'; 
+							this.style.backgroundColor = '#C0D8EE'; 
+							this.style.font = '9pt 宋体'; 
+							this.style.color = '#CF3300'; 
+							this.style.cursor = 'hand';" 
+				onmouseout="this.style.paddingleft = '15px'; 
+							this.style.paddingright = '5px'; 
+							this.style.border = '1px solid #FCFCF8'; 
+							this.style.backgroundColor = '#FCFCF8';
+							this.style.font =  '9pt 宋体'; 
+							this.style.color = '#01259F'; 
+							this.style.cursor = 'hand';">正式退休</td>
+	</tr>
+	<!-- 分隔条 -->
+	<tr>
+		<td bgcolor="#FCFCF8">
+			<table width="100%" cellpadding="0" cellspacing="0" border="0">
+				<tr>
+					<td background="../images/Top_Menu_Divider_Horizontal.gif"><img src="../images/Top_Menu_Divider_Horizontal.gif" width="1" height="2" border="0"></td>
+				</tr>
+			</table>
+		</td>
+	</tr>
+	<tr>
+		<td onClick="parent.goBeforeRetire();parent.oPopup.hide();" 
+				style=" padding-left : 8px; 
+						padding-right : 8px; 
+						border : 1px solid #F3F3EE; 
+						font : 9pt 宋体; 
+						color : #01259F; 
+						cursor : hand;" 
+				onmouseover="this.style.paddingleft = '15px'; 
+							this.style.paddingright = '5px'; 
+							this.style.border = '1px solid #468BC7'; 
+							this.style.backgroundColor = '#C0D8EE'; 
+							this.style.font = '9pt 宋体'; 
+							this.style.color = '#CF3300'; 
+							this.style.cursor = 'hand';" 
+				onmouseout="this.style.paddingleft = '15px'; 
+							this.style.paddingright = '5px'; 
+							this.style.border = '1px solid #FCFCF8'; 
+							this.style.backgroundColor = '#FCFCF8';
+							this.style.font =  '9pt 宋体'; 
+							this.style.color = '#01259F'; 
+							this.style.cursor = 'hand';">员工内退</td>
+	</tr>
+	
+	<!-- 分隔条 -->
+	<tr>
+		<td bgcolor="#FCFCF8">
+			<table width="100%" cellpadding="0" cellspacing="0" border="0">
+				<tr>
+					<td background="../images/Top_Menu_Divider_Horizontal.gif"><img src="../images/Top_Menu_Divider_Horizontal.gif" width="1" height="2" border="0"></td>
+				</tr>
+			</table>
+		</td>
+	</tr>
+	<tr>
+		<td onClick="parent.goRetired();parent.oPopup.hide();" 
+				style=" padding-left : 8px; 
+						padding-right : 8px; 
+						border : 1px solid #F3F3EE; 
+						font : 9pt 宋体; 
+						color : #01259F; 
+						cursor : hand;" 
+				onmouseover="this.style.paddingleft = '15px'; 
+							this.style.paddingright = '5px'; 
+							this.style.border = '1px solid #468BC7'; 
+							this.style.backgroundColor = '#C0D8EE'; 
+							this.style.font = '9pt 宋体'; 
+							this.style.color = '#CF3300'; 
+							this.style.cursor = 'hand';" 
+				onmouseout="this.style.paddingleft = '15px'; 
+							this.style.paddingright = '5px'; 
+							this.style.border = '1px solid #FCFCF8'; 
+							this.style.backgroundColor = '#FCFCF8';
+							this.style.font =  '9pt 宋体'; 
+							this.style.color = '#01259F'; 
+							this.style.cursor = 'hand';">已退休员工</td>
+	</tr>
+</table>
+</div>
+<!-- 员工退休管理结束 -->
+
+<!-- 绩效考评管理子菜单 -->
+<div id="MenuItem_Check" style="position: absolute; display: none;">
+<table bgcolor="#FFFFFF" width="100%" cellpadding="2" cellspacing="2" border="0" style="border: 1px solid #00349A;">
+	<tr>
+		<td onClick="parent.goRLZYCheck();parent.oPopup.hide();" 
+				style=" padding-left : 8px; 
+						padding-right : 8px; 
+						border : 1px solid #F3F3EE; 
+						font : 9pt 宋体; 
+						color : #01259F; 
+						cursor : hand;" 
+				onmouseover="this.style.paddingleft = '15px'; 
+							this.style.paddingright = '5px'; 
+							this.style.border = '1px solid #468BC7'; 
+							this.style.backgroundColor = '#C0D8EE'; 
+							this.style.font = '9pt 宋体'; 
+							this.style.color = '#CF3300'; 
+							this.style.cursor = 'hand';" 
+				onmouseout="this.style.paddingleft = '15px'; 
+							this.style.paddingright = '5px'; 
+							this.style.border = '1px solid #FCFCF8'; 
+							this.style.backgroundColor = '#FCFCF8';
+							this.style.font =  '9pt 宋体'; 
+							this.style.color = '#01259F'; 
+							this.style.cursor = 'hand';">人力资源专业考核</td>
+	</tr>
+	<!-- 分隔条 -->
+	<tr>
+		<td bgcolor="#FCFCF8">
+			<table width="100%" cellpadding="0" cellspacing="0" border="0">
+				<tr>
+					<td background="../images/Top_Menu_Divider_Horizontal.gif"><img src="../images/Top_Menu_Divider_Horizontal.gif" width="1" height="2" border="0"></td>
+				</tr>
+			</table>
+		</td>
+	</tr>
+	<tr>
+		<td onClick="parent.goDeptCheck();parent.oPopup.hide();" 
+				style=" padding-left : 8px; 
+						padding-right : 8px; 
+						border : 1px solid #F3F3EE; 
+						font : 9pt 宋体; 
+						color : #01259F; 
+						cursor : hand;" 
+				onmouseover="this.style.paddingleft = '15px'; 
+							this.style.paddingright = '5px'; 
+							this.style.border = '1px solid #468BC7'; 
+							this.style.backgroundColor = '#C0D8EE'; 
+							this.style.font = '9pt 宋体'; 
+							this.style.color = '#CF3300'; 
+							this.style.cursor = 'hand';" 
+				onmouseout="this.style.paddingleft = '15px'; 
+							this.style.paddingright = '5px'; 
+							this.style.border = '1px solid #FCFCF8'; 
+							this.style.backgroundColor = '#FCFCF8';
+							this.style.font =  '9pt 宋体'; 
+							this.style.color = '#01259F'; 
+							this.style.cursor = 'hand';">部门考核</td>
+	</tr>
+	<!-- 分隔条 -->
+	<tr>
+		<td bgcolor="#FCFCF8">
+			<table width="100%" cellpadding="0" cellspacing="0" border="0">
+				<tr>
+					<td background="../images/Top_Menu_Divider_Horizontal.gif"><img src="../images/Top_Menu_Divider_Horizontal.gif" width="1" height="2" border="0"></td>
+				</tr>
+			</table>
+		</td>
+	</tr>
+	<tr>
+		<td onClick="parent.goEmpCheck();parent.oPopup.hide();" 
+				style=" padding-left : 8px; 
+						padding-right : 8px; 
+						border : 1px solid #F3F3EE; 
+						font : 9pt 宋体; 
+						color : #01259F; 
+						cursor : hand;" 
+				onmouseover="this.style.paddingleft = '15px'; 
+							this.style.paddingright = '5px'; 
+							this.style.border = '1px solid #468BC7'; 
+							this.style.backgroundColor = '#C0D8EE'; 
+							this.style.font = '9pt 宋体'; 
+							this.style.color = '#CF3300'; 
+							this.style.cursor = 'hand';" 
+				onmouseout="this.style.paddingleft = '15px'; 
+							this.style.paddingright = '5px'; 
+							this.style.border = '1px solid #FCFCF8'; 
+							this.style.backgroundColor = '#FCFCF8';
+							this.style.font =  '9pt 宋体'; 
+							this.style.color = '#01259F'; 
+							this.style.cursor = 'hand';">员工考核</td>
+	</tr>
+</table>
+</div>
+<!-- 绩效考评管理结束 -->
+
+<!-- 薪资管理子菜单 -->
+<div id="MenuItem_Salary" style="position: absolute; display: none;">
+<table bgcolor="#FFFFFF" width="100%" cellpadding="2" cellspacing="2" border="0" style="border: 1px solid #00349A;">
+	<tr>
+		<td onClick="parent.goSalary();parent.oPopup.hide();" 
+				style=" padding-left : 8px; 
+						padding-right : 8px; 
+						border : 1px solid #F3F3EE; 
+						font : 9pt 宋体; 
+						color : #01259F; 
+						cursor : hand;" 
+				onmouseover="this.style.paddingleft = '15px'; 
+							this.style.paddingright = '5px'; 
+							this.style.border = '1px solid #468BC7'; 
+							this.style.backgroundColor = '#C0D8EE'; 
+							this.style.font = '9pt 宋体'; 
+							this.style.color = '#CF3300'; 
+							this.style.cursor = 'hand';" 
+				onmouseout="this.style.paddingleft = '15px'; 
+							this.style.paddingright = '5px'; 
+							this.style.border = '1px solid #FCFCF8'; 
+							this.style.backgroundColor = '#FCFCF8';
+							this.style.font =  '9pt 宋体'; 
+							this.style.color = '#01259F'; 
+							this.style.cursor = 'hand';">工资管理</td>
+	</tr>
+	<!-- 分隔条 -->
+	<tr>
+		<td bgcolor="#FCFCF8">
+			<table width="100%" cellpadding="0" cellspacing="0" border="0">
+				<tr>
+					<td background="../images/Top_Menu_Divider_Horizontal.gif"><img src="../images/Top_Menu_Divider_Horizontal.gif" width="1" height="2" border="0"></td>
+				</tr>
+			</table>
+		</td>
+	</tr>
+	<tr>
+		<td onClick="parent.goSalaryMaintain();parent.oPopup.hide();" 
+				style=" padding-left : 8px; 
+						padding-right : 8px; 
+						border : 1px solid #F3F3EE; 
+						font : 9pt 宋体; 
+						color : #01259F; 
+						cursor : hand;" 
+				onmouseover="this.style.paddingleft = '15px'; 
+							this.style.paddingright = '5px'; 
+							this.style.border = '1px solid #468BC7'; 
+							this.style.backgroundColor = '#C0D8EE'; 
+							this.style.font = '9pt 宋体'; 
+							this.style.color = '#CF3300'; 
+							this.style.cursor = 'hand';" 
+				onmouseout="this.style.paddingleft = '15px'; 
+							this.style.paddingright = '5px'; 
+							this.style.border = '1px solid #FCFCF8'; 
+							this.style.backgroundColor = '#FCFCF8';
+							this.style.font =  '9pt 宋体'; 
+							this.style.color = '#01259F'; 
+							this.style.cursor = 'hand';">工资套帐维护</td>
+	</tr>
+	<!-- 分隔条 -->
+	<tr>
+		<td bgcolor="#FCFCF8">
+			<table width="100%" cellpadding="0" cellspacing="0" border="0">
+				<tr>
+					<td background="../images/Top_Menu_Divider_Horizontal.gif"><img src="../images/Top_Menu_Divider_Horizontal.gif" width="1" height="2" border="0"></td>
+				</tr>
+			</table>
+		</td>
+	</tr>
+	<tr>
+		<td onClick="parent.goSalarySet();parent.oPopup.hide();" 
+				style=" padding-left : 8px; 
+						padding-right : 8px; 
+						border : 1px solid #F3F3EE; 
+						font : 9pt 宋体; 
+						color : #01259F; 
+						cursor : hand;" 
+				onmouseover="this.style.paddingleft = '15px'; 
+							this.style.paddingright = '5px'; 
+							this.style.border = '1px solid #468BC7'; 
+							this.style.backgroundColor = '#C0D8EE'; 
+							this.style.font = '9pt 宋体'; 
+							this.style.color = '#CF3300'; 
+							this.style.cursor = 'hand';" 
+				onmouseout="this.style.paddingleft = '15px'; 
+							this.style.paddingright = '5px'; 
+							this.style.border = '1px solid #FCFCF8'; 
+							this.style.backgroundColor = '#FCFCF8';
+							this.style.font =  '9pt 宋体'; 
+							this.style.color = '#01259F'; 
+							this.style.cursor = 'hand';">员工套帐设定</td>
+	</tr>
+</table>
+</div>
+<!-- 薪资管理结束 -->
+
+<!-- 考勤管理子菜单 -->
+<div id="MenuItem_Attendance" style="position: absolute; display: none;">
+<table bgcolor="#FFFFFF" width="100%" cellpadding="2" cellspacing="2" border="0" style="border: 1px solid #00349A;">
+	<tr>
+		<td onClick="parent.goAttendance();parent.oPopup.hide();" 
+				style=" padding-left : 8px; 
+						padding-right : 8px; 
+						border : 1px solid #F3F3EE; 
+						font : 9pt 宋体; 
+						color : #01259F; 
+						cursor : hand;" 
+				onmouseover="this.style.paddingleft = '15px'; 
+							this.style.paddingright = '5px'; 
+							this.style.border = '1px solid #468BC7'; 
+							this.style.backgroundColor = '#C0D8EE'; 
+							this.style.font = '9pt 宋体'; 
+							this.style.color = '#CF3300'; 
+							this.style.cursor = 'hand';" 
+				onmouseout="this.style.paddingleft = '15px'; 
+							this.style.paddingright = '5px'; 
+							this.style.border = '1px solid #FCFCF8'; 
+							this.style.backgroundColor = '#FCFCF8';
+							this.style.font =  '9pt 宋体'; 
+							this.style.color = '#01259F'; 
+							this.style.cursor = 'hand';">日常考勤管理</td>
+	</tr>
+	<!-- 分隔条 -->
+	<tr>
+		<td bgcolor="#FCFCF8">
+			<table width="100%" cellpadding="0" cellspacing="0" border="0">
+				<tr>
+					<td background="../images/Top_Menu_Divider_Horizontal.gif"><img src="../images/Top_Menu_Divider_Horizontal.gif" width="1" height="2" border="0"></td>
+				</tr>
+			</table>
+		</td>
+	</tr>
+	<tr>
+		<td onClick="parent.goLeave();parent.oPopup.hide();" 
+				style=" padding-left : 8px; 
+						padding-right : 8px; 
+						border : 1px solid #F3F3EE; 
+						font : 9pt 宋体; 
+						color : #01259F; 
+						cursor : hand;" 
+				onmouseover="this.style.paddingleft = '15px'; 
+							this.style.paddingright = '5px'; 
+							this.style.border = '1px solid #468BC7'; 
+							this.style.backgroundColor = '#C0D8EE'; 
+							this.style.font = '9pt 宋体'; 
+							this.style.color = '#CF3300'; 
+							this.style.cursor = 'hand';" 
+				onmouseout="this.style.paddingleft = '15px'; 
+							this.style.paddingright = '5px'; 
+							this.style.border = '1px solid #FCFCF8'; 
+							this.style.backgroundColor = '#FCFCF8';
+							this.style.font =  '9pt 宋体'; 
+							this.style.color = '#01259F'; 
+							this.style.cursor = 'hand';">请假管理</td>
+	</tr>
+</table>
+</div>
+<!-- 薪资管理结束 -->
+
+
+
+<!-- 员工变动子菜单 -->
+<div id="MenuItem_Reduce" style="position: absolute; display: none;">
+<table bgcolor="#FFFFFF" width="100%" cellpadding="2" cellspacing="2" border="0" style="border: 1px solid #00349A;">
+<tr>
+		<td onClick="parent.goEmpRemove();parent.oPopup.hide();" 
+				style=" padding-left : 8px; 
+						padding-right : 8px; 
+						border : 1px solid #F3F3EE; 
+						font : 9pt 宋体; 
+						color : #01259F; 
+						cursor : hand;" 
+				onmouseover="this.style.paddingleft = '15px'; 
+							this.style.paddingright = '5px'; 
+							this.style.border = '1px solid #468BC7'; 
+							this.style.backgroundColor = '#C0D8EE'; 
+							this.style.font = '9pt 宋体'; 
+							this.style.color = '#CF3300'; 
+							this.style.cursor = 'hand';" 
+				onmouseout="this.style.paddingleft = '15px'; 
+							this.style.paddingright = '5px'; 
+							this.style.border = '1px solid #FCFCF8'; 
+							this.style.backgroundColor = '#FCFCF8';
+							this.style.font =  '9pt 宋体'; 
+							this.style.color = '#01259F'; 
+							this.style.cursor = 'hand';">员工调动</td>
+	</tr>
+
+<!-- 分隔条 -->
+	<tr>
+		<td bgcolor="#FCFCF8">
+			<table width="100%" cellpadding="0" cellspacing="0" border="0">
+				<tr>
+					<td background="../images/Top_Menu_Divider_Horizontal.gif"><img src="../images/Top_Menu_Divider_Horizontal.gif" width="1" height="2" border="0"></td>
+				</tr>
+			</table>
+		</td>
+	</tr>
+	<tr>
+		<td onClick="parent.goEmpResignation();parent.oPopup.hide();" 
+				style=" padding-left : 8px; 
+						padding-right : 8px; 
+						border : 1px solid #F3F3EE; 
+						font : 9pt 宋体; 
+						color : #01259F; 
+						cursor : hand;" 
+				onmouseover="this.style.paddingleft = '15px'; 
+							this.style.paddingright = '5px'; 
+							this.style.border = '1px solid #468BC7'; 
+							this.style.backgroundColor = '#C0D8EE'; 
+							this.style.font = '9pt 宋体'; 
+							this.style.color = '#CF3300'; 
+							this.style.cursor = 'hand';" 
+				onmouseout="this.style.paddingleft = '15px'; 
+							this.style.paddingright = '5px'; 
+							this.style.border = '1px solid #FCFCF8'; 
+							this.style.backgroundColor = '#FCFCF8';
+							this.style.font =  '9pt 宋体'; 
+							this.style.color = '#01259F'; 
+							this.style.cursor = 'hand';">员工辞职</td>
+	</tr>
+	<!-- 分隔条 -->
+	<tr>
+		<td bgcolor="#FCFCF8">
+			<table width="100%" cellpadding="0" cellspacing="0" border="0">
+				<tr>
+					<td background="../images/Top_Menu_Divider_Horizontal.gif"><img src="../images/Top_Menu_Divider_Horizontal.gif" width="1" height="2" border="0"></td>
+				</tr>
+			</table>
+		</td>
+	</tr>
+	<tr>
+		<td onClick="parent.goEmpDismissal();parent.oPopup.hide();" 
+				style=" padding-left : 8px; 
+						padding-right : 8px; 
+						border : 1px solid #F3F3EE; 
+						font : 9pt 宋体; 
+						color : #01259F; 
+						cursor : hand;" 
+				onmouseover="this.style.paddingleft = '15px'; 
+							this.style.paddingright = '5px'; 
+							this.style.border = '1px solid #468BC7'; 
+							this.style.backgroundColor = '#C0D8EE'; 
+							this.style.font = '9pt 宋体'; 
+							this.style.color = '#CF3300'; 
+							this.style.cursor = 'hand';" 
+				onmouseout="this.style.paddingleft = '15px'; 
+							this.style.paddingright = '5px'; 
+							this.style.border = '1px solid #FCFCF8'; 
+							this.style.backgroundColor = '#FCFCF8';
+							this.style.font =  '9pt 宋体'; 
+							this.style.color = '#01259F'; 
+							this.style.cursor = 'hand';">员工辞退</td>
+	</tr>
+</table>
+</div>
+<!-- 辞职管理结束 -->
+
+
+<!-- 统计分析管理子菜单 -->
+<div id="MenuItem_Analyse" style="position: absolute; display: none;">
+<table bgcolor="#FFFFFF" width="100%" cellpadding="2" cellspacing="2" border="0" style="border: 1px solid #00349A;">
+	<tr>
+		<td onClick="parent.goEmpAgeAnalyse();parent.oPopup.hide();" 
+				style=" padding-left : 8px; 
+						padding-right : 8px; 
+						border : 1px solid #F3F3EE; 
+						font : 9pt 宋体; 
+						color : #01259F; 
+						cursor : hand;" 
+				onmouseover="this.style.paddingleft = '15px'; 
+							this.style.paddingright = '5px'; 
+							this.style.border = '1px solid #468BC7'; 
+							this.style.backgroundColor = '#C0D8EE'; 
+							this.style.font = '9pt 宋体'; 
+							this.style.color = '#CF3300'; 
+							this.style.cursor = 'hand';" 
+				onmouseout="this.style.paddingleft = '15px'; 
+							this.style.paddingright = '5px'; 
+							this.style.border = '1px solid #FCFCF8'; 
+							this.style.backgroundColor = '#FCFCF8';
+							this.style.font =  '9pt 宋体'; 
+							this.style.color = '#01259F'; 
+							this.style.cursor = 'hand';">年龄结构分析</td>
+	</tr>
+	<!-- 分隔条 -->
+	<tr>
+		<td bgcolor="#FCFCF8">
+			<table width="100%" cellpadding="0" cellspacing="0" border="0">
+				<tr>
+					<td background="../images/Top_Menu_Divider_Horizontal.gif"><img src="../images/Top_Menu_Divider_Horizontal.gif" width="1" height="2" border="0"></td>
+				</tr>
+			</table>
+		</td>
+	</tr>
+		
+	<tr>
+		<td onClick="parent.goEducationAnalyse();parent.oPopup.hide();" 
+				style=" padding-left : 8px; 
+						padding-right : 8px; 
+						border : 1px solid #F3F3EE; 
+						font : 9pt 宋体; 
+						color : #01259F; 
+						cursor : hand;" 
+				onmouseover="this.style.paddingleft = '15px'; 
+							this.style.paddingright = '5px'; 
+							this.style.border = '1px solid #468BC7'; 
+							this.style.backgroundColor = '#C0D8EE'; 
+							this.style.font = '9pt 宋体'; 
+							this.style.color = '#CF3300'; 
+							this.style.cursor = 'hand';" 
+				onmouseout="this.style.paddingleft = '15px'; 
+							this.style.paddingright = '5px'; 
+							this.style.border = '1px solid #FCFCF8'; 
+							this.style.backgroundColor = '#FCFCF8';
+							this.style.font =  '9pt 宋体'; 
+							this.style.color = '#01259F'; 
+							this.style.cursor = 'hand';">学历层次结构分析</td>
+		
+	</tr>
+	
+	<!-- 分隔条 -->
+	<tr>
+		<td bgcolor="#FCFCF8">
+			<table width="100%" cellpadding="0" cellspacing="0" border="0">
+				<tr>
+					<td background="../images/Top_Menu_Divider_Horizontal.gif"><img src="../images/Top_Menu_Divider_Horizontal.gif" width="1" height="2" border="0"></td>
+				</tr>
+			</table>
+		</td>
+	</tr>
+	
+	<tr>
+		<td onClick="parent.goTechnicalAnalyse();parent.oPopup.hide();" 
+				style=" padding-left : 8px; 
+						padding-right : 8px; 
+						border : 1px solid #F3F3EE; 
+						font : 9pt 宋体; 
+						color : #01259F; 
+						cursor : hand;" 
+				onmouseover="this.style.paddingleft = '15px'; 
+							this.style.paddingright = '5px'; 
+							this.style.border = '1px solid #468BC7'; 
+							this.style.backgroundColor = '#C0D8EE'; 
+							this.style.font = '9pt 宋体'; 
+							this.style.color = '#CF3300'; 
+							this.style.cursor = 'hand';" 
+				onmouseout="this.style.paddingleft = '15px'; 
+							this.style.paddingright = '5px'; 
+							this.style.border = '1px solid #FCFCF8'; 
+							this.style.backgroundColor = '#FCFCF8';
+							this.style.font =  '9pt 宋体'; 
+							this.style.color = '#01259F'; 
+							this.style.cursor = 'hand';">职称评定资质分析</td>
+		
+	</tr>
+	<!-- 分隔条 -->
+	<tr>
+		<td bgcolor="#FCFCF8">
+			<table width="100%" cellpadding="0" cellspacing="0" border="0">
+				<tr>
+					<td background="../images/Top_Menu_Divider_Horizontal.gif"><img src="../images/Top_Menu_Divider_Horizontal.gif" width="1" height="2" border="0"></td>
+				</tr>
+			</table>
+		</td>
+	</tr>
+		
+	<tr>
+		<td onClick="parent.goStatEmpIntegration();parent.oPopup.hide();" 
+				style=" padding-left : 8px; 
+						padding-right : 8px; 
+						border : 1px solid #F3F3EE; 
+						font : 9pt 宋体; 
+						color : #01259F; 
+						cursor : hand;" 
+				onmouseover="this.style.paddingleft = '15px'; 
+							this.style.paddingright = '5px'; 
+							this.style.border = '1px solid #468BC7'; 
+							this.style.backgroundColor = '#C0D8EE'; 
+							this.style.font = '9pt 宋体'; 
+							this.style.color = '#CF3300'; 
+							this.style.cursor = 'hand';" 
+				onmouseout="this.style.paddingleft = '15px'; 
+							this.style.paddingright = '5px'; 
+							this.style.border = '1px solid #FCFCF8'; 
+							this.style.backgroundColor = '#FCFCF8';
+							this.style.font =  '9pt 宋体'; 
+							this.style.color = '#01259F'; 
+							this.style.cursor = 'hand';">人员综合统计</td>
+		
+	</tr>
+	
+</table>
+</div>
+<!-- 统计分析子菜单结束 -->
+</body>
+</html>
+<SCRIPT Language=VBScript><!--
+
+//--></SCRIPT>

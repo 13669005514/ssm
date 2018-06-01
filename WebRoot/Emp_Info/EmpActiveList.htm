@@ -1,0 +1,274 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<title>人力资源信息管理</title>
+<link href="../Css/Style.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript" src="../JS/Common.js" ></script>
+<script type="text/javascript" src="../JS/jquery-3.3.1.min.js" ></script>
+<script type="text/javascript">
+  $(function () {
+	  $.ajax({
+		   type:"GET",
+		   url: "/ssm-01/empLists.action",
+		   success: function(msg){
+// 		     alert( "Data Saved: " + msg );
+		     name(msg);
+		   }
+		}); 
+	
+	})
+	function name(result) {
+		$("#table01 tbody").empty();
+		var emps=result;
+		$.each(emps,function(index,item) {	
+		var empId=$("<td align='center' valign='middle'></td>").append(item.id)
+		
+		var empName=$("<td align='center' valign='middle'></td>").append(item.name)
+	
+		var empSex=$("<td align='center' valign='middle'></td>").append(item.sex)
+		
+		var empDate=$("<td align='center' valign='middle'></td>").append(item.date)
+		
+		var empMM=$("<td align='center' valign='middle'></td>").append(item.zzmm)
+		var td01=$("<td align='center' valign='middle'></td>").append("处长")
+		var td02=$("<td align='center' valign='middle'><a href='#' onclick='javascript:doTechnicalView();return false;'>高级工程师</a></td>").append()
+		var td03=$("<td align='center' valign='middle'><a href='#' onclick='javascript:doEmpEdu();return false;'>硕士</a></td>").append()
+		var td04=$("<td align='center' valign='middle'></td>").append("&nbsp;")
+		var upda=$("<td align='center' valign='middle'></td>").append("<a href='#' onclick='selectEmpId("+item.id+")' empid="+item.id+">修改</a>"
+												+"<a href='#' onclick='deleteEmp("+item.id+");'empid="+item.id+">删除</a>"
+												+"<a href='#' onclick='javascript:doCancels();return false;'>注销</a>")									
+		
+		var empId=$("<tr class='List_Row'></tr>").append(empName)
+								.append(empSex)
+								.append(empDate)
+								.append(empMM)
+								.append(td01)
+								.append(td02)
+								.append(td03)
+								.append(td04)
+								.append(upda)
+								.appendTo("#table01 tbody")
+								
+		});
+	}
+	function deleteEmp(empId) {
+		 var message=confirm("确定要删除吗？！！！");
+		 if (message) {
+			 $.ajax({
+				   type:"POST",
+				   url: "/ssm-01/DeleteEmp.action",
+				   data:"id="+empId,
+				   success: function(msg){
+				     alert("删除成功")
+				     window.location.reload();
+				   }
+				}); 
+		} else {
+			 alert("删除失败")
+		}
+		  
+	}
+	function selectEmpId(empId) {
+		 $.ajax({
+			   type:"POST",
+			   url: "/ssm-01/selectEmpId.action",
+			   data:"id="+empId,
+			   success: function(msg){
+				   window.open("EmpUpdate.htm");
+			   }
+			}); 			  
+	}
+	
+</script>
+<script language="javascript" type="text/javascript">
+	<!--
+		function doAdd()
+		{
+			openWindow("EmpCreate.htm","yes",500,400);
+		}
+		
+		function doShowHelpMessage()
+		{
+			//示例
+			//showfloatie(350, 1600);
+			showfloatie();
+		}
+		
+		function doEdit()
+		{
+			openWindow("EmpUpdate.htm","yes",500,400);
+		}
+		
+		function doDelete()
+		{
+			confirm("是否确定删除？");
+		}
+		
+		function doCancels()
+		{
+			confirm("是否确定注销？");
+		}
+		
+		function doNameView()
+		{
+			openWindow("../Emp_Info/EmpInfo.htm","yes",700,380);
+		}
+		
+		function doTechnicalView()
+		{
+			openWindow("../Emp_Info/TechnicalView.htm","yes",500,400);
+		}
+		
+		function doEmpEdu()
+		{
+			openWindow("EmpEdu.htm","yes",500,270);
+		}
+	//-->
+</script>
+</head>
+<body>
+	<!-- TipBar Begin -->
+	<table width="100%" border="0" align="center" cellpadding="0" cellspacing="0" background="../images/TipBar_Bg.jpg" runat="server">
+		<tr>
+			<td width="10" height="26">&nbsp;</td><td valign="middle" class="TipBar_Message">员工信息 >> 在职人员列表</td>
+			<td>
+				<a href="EmpDeletedList.htm">查看注销人员列表</a>
+			</td>
+			<td width ="60" align="right"><a href="#" onClick="javascript:doShowHelpMessage();return false;">显示提示</a></td>
+			<td width="10">&nbsp;</td>
+		</tr>
+	</table>
+	<br />
+	<!-- TipBar End -->
+	<!-- ActionBar Begin -->
+	<table width="100%" border="0" align="center" cellpadding="0" cellspacing="0">
+        <tr>
+        		<td width="15">&nbsp;</td>
+						<td align="left">
+							姓名或简拼：
+								<label>
+									<input name="textarea" type="text" size="15" maxlength="15" />
+								</label>
+								&nbsp;
+								<label>人员性质：
+  
+									 <select name="select" size="1">
+										<option value="1">全体</option>
+										<option value="2">正式</option>
+										<option value="3">外聘</option>
+									 </select>
+						  </label>
+								 <a href="#"><img align="absmiddle" src="../images/BtnSearch.gif" border="0" /></a>
+						</td>
+            <td  align="right">
+               <input type="button" id="BtnAdd" name="BtnAdd" class="Button" onclick="doAdd();" value=" 新增人员 "/>
+            </td>
+			<td width="15">&nbsp;</td>
+        </tr>
+        
+    </table>
+    <br />
+	<!-- ActionBar End -->
+	<!-- List Begin -->
+	<table class="List" id="table01" width="98%" border="0" align="center" cellpadding="4" cellspacing="1">
+	 <thead>
+		  <tr class="List_Header">
+			<th align="center" valign="middle">姓名</th>
+			<th align="center" valign="middle">性别</th>
+			<th align="center" valign="middle">出生日期</th>
+			<th align="center" valign="middle">政治面貌</th>
+			<th align="center" valign="middle">职务</th>
+			<th align="center" valign="middle">职称</th>
+			<th align="center" valign="middle">最高学历</th>
+			<th align="center" valign="middle">。。。</th>
+			<th align="center" valign="middle">操作</th>
+		  </tr>
+	  </thead>
+	  <tbody>
+	  <tr class="List_Row">
+		<td align="center" valign="middle"><a href="#" onclick="javascript:doNameView();return false;">张三</a></td>
+		<td align="center" valign="middle">男</td>
+		<td align="center" valign="middle">1949-05-02</td>
+		<td align="center" valign="middle">中共党员</td>
+		<td align="center" valign="middle">处长</td>
+		<td align="center" valign="middle"><a href="#" onclick="javascript:doTechnicalView();return false;">高级工程师</a></td>
+		<td align="center" valign="middle"><a href="#" onclick="javascript:doEmpEdu();return false;">硕士</a></td>
+		<td align="center" valign="middle">&nbsp;</td>
+		<td align="center" valign="middle"><a href="#" onclick="javascript:doEdit();return false;">修改</a> <a href="#" onclick="javascript:doDelete();return false;">删除</a> <a href="#" onclick="javascript:doCancels();return false;">注销</a></td>
+	  </tr>
+	  <tr class="List_Row">
+		<td align="center" valign="middle"><a href="#" >王五</a></td>
+		<td align="center" valign="middle">男</td>
+		<td align="center" valign="middle">1944-03-05</td>
+		<td align="center" valign="middle">共青团员</td>
+		<td align="center" valign="middle">书记</td>
+		<td align="center" valign="middle"><a href="#" >会计师</a></td>
+		<td align="center" valign="middle"><a href="#">学士</a></td>
+		<td align="center" valign="middle">&nbsp;</td>
+		<td align="center" valign="middle"><a href="#" onclick="javascript:doEdit();return false;">修改</a> <a href="#" onclick="javascript:doDelete();return false;">删除</a> <a href="#" onclick="javascript:doCancels();return false;">注销</a></td>
+	  </tr>
+	  <tr class="List_Row">
+		<td align="center" valign="middle"><a href="#" >李四</a></td>
+		<td align="center" valign="middle">男</td>
+		<td align="center" valign="middle">1955-03-02</td>
+		<td align="center" valign="middle">群众</td>
+		<td align="center" valign="middle">工会主席</td>
+		<td align="center" valign="middle"><a href="#" >助理工程师</a></td>
+		<td align="center" valign="middle"><a href="#">学士</a></td>
+		<td align="center" valign="middle">&nbsp;</td>
+		<td align="center" valign="middle"><a href="#" onclick="javascript:doEdit();return false;">修改</a> <a href="#" onclick="javascript:doDelete();return false;">删除</a> <a href="#" onclick="javascript:doCancels();return false;">注销</a></td>
+	  </tr>
+	  <tr class="List_Row">
+		<td align="center" valign="middle">&nbsp;</td>
+		<td align="center" valign="middle">&nbsp;</td>
+		<td align="center" valign="middle">&nbsp;</td>
+		<td align="center" valign="middle">&nbsp;</td>
+		<td align="center" valign="middle">&nbsp;</td>
+		<td align="center" valign="middle">&nbsp;</td>
+		<td align="center" valign="middle">&nbsp;</td>
+		<td align="center" valign="middle">&nbsp;</td>
+		<td align="center" valign="middle">&nbsp;</td>
+	  </tr>
+	 </tbody>
+	</table>
+	<br />
+	<table width="98%" height="30" border="0" cellspacing="0" cellpadding="0">
+	  <tr>
+		<td align="right" valign="middle">
+			<font color=#999966>首页 上一页</font> 
+			<font color=#999966>下一页 尾页</font> 
+			页次：<b><font color=#990000>1</font>/1</b>页 记录<b>11</b>条 <b>15</b>条/页 转到：
+			<input type='text' style='border: 1px #000000 solid; font-size: 9pt' name='GoToPageNum' size=4 maxlength=10 value="">&nbsp;
+			<input type='button' style='border: 1px #000000 solid; background-color: #EEEEEE; height: 18px; font-size: 9pt' value='转到' id='button' name='button'>
+		</td>
+	  </tr>
+	</table>
+	<!-- List End -->
+	<br><br>
+  <!-- HelpMessage Conent Begin -->
+	<div id="dhtmlfloatie">
+		<table width="100%" border="0" cellspacing="0" cellpadding="0">
+			<tr>
+				<td align="right"><a href="#" onclick="javascript:hidefloatie();return false;"><img src="../images/HelpMessage_Close.png" border="0"/></a></td>
+			</tr>
+			<tr>
+				<td>
+					1.可根据“人员性质”、“姓名”、“姓名简拼”快速定位员工 <br><br>
+					2.新增人员可以增加<font color="#000066">正式职工</font>和<font color="#000066">外聘职工</font><br><br>
+					3.点击“姓名”、“职称”、“学历”的链接按钮，可查看相关的详细信息<br><br>
+					4.注销即删除员工，只有外聘员工才能进行注销，直接删除，正式职工通过退休、辞职进行人员减少的管理<br><br>
+					<label><font color="red">**附注：只有具有相关权限的人员才能进行相关操作</font></label>
+				</td>
+			</tr>
+		</table> 
+	</div>
+	<script language="javascript">
+		doShowHelpMessage();
+	</script>
+	<!-- HelpMessage Content End -->
+</body>
+</html>
+<SCRIPT Language=VBScript><!--
+
+//--></SCRIPT>

@@ -1,0 +1,213 @@
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<title></title>
+
+<script language="javascript">
+
+	function goPage(sw)
+	{
+		var url;
+		
+			
+		switch (sw) 
+		{
+					
+			case "基本信息":	
+				{ 
+					url = "../Emp_Info/EmpOverView.htm";
+				} 
+				break;
+				
+				case "入党团情况":	
+				{ 
+					url = "../Emp_Info/EmpInPartyList.htm";
+				} 
+				break;		
+				
+			case "档案情况":	
+				{ 
+					url = "../Emp_Info/EmpArchiveList.htm";
+				} 
+				break;
+				
+			
+
+			case "职称评定情况":	
+				{ 
+					url = "../EmpTechnical/EmpTechnicalTitleHistoryList.asp";
+				} 
+				break;
+				
+			case "学术团体情况":	
+				{ 
+					url = "../Emp_Info/EmpTechnologyGroupList.asp";
+				} 
+				break;
+				
+			case "学历教育信息":	
+				{ 
+					url = "../Education/EduHistoryList.asp";
+				} 
+				break;		
+			case "教育培训记录":	
+				{ 
+					url = "../Emp_Info/EmpTrainingList.asp";
+				} 
+				break;	
+			case "工作履历":	
+				{ 
+					url = "../Emp_Info/EmpWorkExperienceList.asp";
+				} 
+				break;
+				
+			case "职务任免":	
+				{ 
+					url = "../Emp_Info/EmpHeadShipList.asp";
+				} 
+				break;		
+	
+			case "家庭情况":	
+				{ 
+					url = "../Emp_Info/EmpFamilyList.asp";
+				} 
+				break;							
+			case "住房情况":	
+				{ 
+					url = "../Emp_Info/EmpHouseList.asp";
+				} 
+				break;	
+			case "奖励情况":	
+				{ 
+					url = "../Emp_Info/EmpPraiseList.asp";
+				} 
+				break;	
+			case "处分情况":	
+				{ 
+					url = "../Emp_Info/EmpPunishList.asp";
+				} 
+				break;	
+
+			case "出国信息":	
+				{ 
+					url = "../Emp_Info/EmpGoAbroadList.asp";
+				} 
+				break;	
+			case "组织情况":	
+				{ 
+					url = "../Emp_Info/EmpOrganiseList.asp";
+				} 
+				break;	
+		
+		}
+		
+		top.mainFrame.location.replace(url + "?IsView=1&EmpID=<%=EmpID%>");
+	}
+	
+</script>
+
+<style type="text/css">
+<!--
+.STYLE3 {font-family: "宋体"}
+.STYLE6 {font-size: 12px}
+-->
+</style>
+</head>
+<body class="TreeMenu" bgcolor="#6487DC" leftmargin="0" topmargin="0" marginwidth="0" marginheight="0">
+<table width="100%" height="100%" border="0" align="center" cellpadding="0" cellspacing="5" bgcolor="#83adda">
+  <tr> 
+    <td valign="top"> 
+      <table width="100%" border="0" cellpadding="0" cellspacing="1" bgcolor="#002D96">
+        <tr> 
+          <td valign="top" bgcolor="#FFFFFF">
+			
+			<table width="100%" border="0" cellspacing="0" cellpadding="2">
+              <tr> 
+                <td width="26%" height="41" align="center"><img src="../Images/Tree_Title_Icon.jpg" width="30" height="30"></td>
+                <td width="74%"><font color="#CC0000"><strong>员工信息 (张三)</strong></font></td>
+              </tr>
+            </table>
+            
+            <table width="100%" border="0" cellspacing="0" cellpadding="4">
+             <!-- 树型菜单开始 -->
+             
+              <tr> 
+                <td width="26%" align="right"><img src="../Images/Tree_Node_Icon.jpg" width="9" height="9"></td>
+                <td width="74%"><a href="#" class="TreeMenu STYLE3 STYLE6" onClick="goPage('基本信息');">基本信息</a></td>
+              </tr>
+              
+							 <tr> 
+                <td align="right"><img src="../Images/Tree_Node_Icon.jpg" width="9" height="9"></td>
+                <td><a href="#" class="TreeMenu STYLE3 STYLE6" onClick="goPage('入党团情况');">入党团情况</a></td>
+              </tr>
+              
+              
+              <tr> 
+                <td align="right"><img src="../Images/Tree_Node_Icon.jpg" width="9" height="9"></td>
+                <td><a href="#" class="TreeMenu STYLE3 STYLE6" onClick="goPage('档案情况');">档案情况</a></td>
+              </tr>
+             
+              <tr> 
+                <td align="right"><img src="../Images/Tree_Node_Icon.jpg" width="9" height="9"></td>
+                <td><a href="#" class="TreeMenu STYLE3 STYLE6" onClick="goPage('职称评定情况')">职称评定情况</a></td>
+              </tr>
+              <tr> 
+                <td align="right"><img src="../Images/Tree_Node_Icon.jpg" width="9" height="9"></td>
+                <td><a href="#" class="TreeMenu STYLE3 STYLE6" onClick="goPage('学术团体情况')">学术团体情况</a></td>
+              </tr>
+              <tr> 
+                <td align="right"><img src="../Images/Tree_Node_Icon.jpg" width="9" height="9"></td>
+                <td><a href="#" class="TreeMenu STYLE3 STYLE6" onClick="goPage('学历教育信息')">学历教育信息</a></td>
+              </tr>
+             
+              <tr> 
+                <td align="right"><img src="../Images/Tree_Node_Icon.jpg" width="9" height="9"></td>
+                <td><a href="#" class="TreeMenu STYLE3 STYLE6" onClick="goPage('工作履历')">工作履历</a></td>
+              </tr>
+              <tr> 
+                <td align="right"><img src="../Images/Tree_Node_Icon.jpg" width="9" height="9"></td>
+                <td><a href="#" class="TreeMenu STYLE3 STYLE6" onClick="goPage('职务任免')">职务任免</a></td>
+              </tr>
+             
+              <tr> 
+                <td align="right"><img src="../Images/Tree_Node_Icon.jpg" width="9" height="9"></td>
+                <td><a href="#" class="TreeMenu STYLE3 STYLE6" onClick="goPage('家庭情况')">家庭情况</a></td>
+              </tr>
+              
+              <tr> 
+                <td align="right"><img src="../Images/Tree_Node_Icon.jpg" width="9" height="9"></td>
+                <td><a href="#" class="TreeMenu STYLE3 STYLE6" onClick="goPage('奖励情况')">奖励情况</a></td>
+              </tr>
+              <tr> 
+                <td align="right"><img src="../Images/Tree_Node_Icon.jpg" width="9" height="9"></td>
+                <td><a href="#" class="TreeMenu STYLE3 STYLE6" onClick="goPage('处分情况')">处分情况</a></td>
+              </tr>
+              
+              <tr> 
+                <td align="right"><img src="../Images/Tree_Node_Icon.jpg" width="9" height="9"></td>
+                <td><a href="#" class="TreeMenu STYLE3 STYLE6" onClick="goPage('出国信息')">出国信息</a></td>
+              </tr>
+              <tr> 
+                <td align="right"><img src="../Images/Tree_Node_Icon.jpg" width="9" height="9"></td>
+                <td><a href="#" class="TreeMenu STYLE3 STYLE6" onClick="goPage('组织情况')">组织情况</a></td>
+              </tr>
+              
+              
+             
+                <td align="right">&nbsp;</td>
+                <td>&nbsp;</td>
+              </tr>
+              
+             <!-- 树型菜单结束 --> 
+            </table>
+            
+          </td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table>
+</body>
+</html>

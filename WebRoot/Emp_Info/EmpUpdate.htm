@@ -1,0 +1,172 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>人力资源信息管理</title>
+<link href="../Css/Style.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript" src="../JS/Common.js" ></script>
+<script type="text/javascript" src="../JS/jquery-3.3.1.min.js" ></script>
+<script type="text/javascript">
+	$(function () {
+		 $.ajax({
+			   type:"GET",
+			   url: "/ssm-01/getEmp.action",
+			   success: function(msg){
+				   $("#id").val(msg.id);
+				   $("#name").val(msg.name);
+				   $("#sex").val(msg.sex);
+				   $("#jname").val(msg.jname);
+				   $("#zname").val(msg.zname);
+				   $("#number").val(msg.number);
+				   $("#adress").val(msg.adress);
+				   $("#idcard").val(msg.idcard);
+				   $("#jkzk").val(msg.jkzk);
+				   $("#date").val(msg.date);
+				   $("#mz").val(msg.mz);
+				   $("#zzmm").val(msg.zzmm);
+				   $("#xqah").val(msg.xqah);
+				   $("#jg").val(msg.jg);
+				   $("#hjxz").val(msg.hjxz); 
+				   $("#homeadress").val(msg.homeadress);
+				   $("#rdate").val(msg.rdate);
+				   $("#gzns").val(msg.gzns);
+				   $("#sdate").val(msg.sdate);
+			   }
+			}); 
+	})
+</script>
+</head>
+<body>
+
+	<!-- TipBar Begin -->
+	<table width="100%" border="0" align="center" cellpadding="0" cellspacing="0" background="../Images/TipBar_Bg.jpg" runat="server">
+		<tr>
+			<td width="10" height="26">&nbsp;</td>
+			<td valign="middle" class="TipBar_Message">员工信息 >> 修改员工记录</td>
+			<td width ="60" align="right"></td>
+			<td width="10">&nbsp;</td>
+		</tr>
+	</table>
+	<br />
+	<!-- TipBar End -->
+	
+	<!-- Form Begin -->
+	<table width="98%" border="0" align="center" cellpadding="0" cellspacing="0">
+		<tr>
+			<td>
+				<form class="CssForm" id="frmSubmit" name="frmSubmit" method="post" action="/ssm-01/updateEmp.action">
+					<fieldset>
+						<legend>修改员工基本信息</legend>
+						<input type="hidden" name="id" id="id" value="">
+						<p>
+							<label for="">姓名:</label>
+							<input name="name" type="text" id="name" size="35" value="张三" />&nbsp;<font color="#FF0000">*</font>
+						</P>
+						<p>
+							<label for="">性别:</label>
+						    <select name="sex" size="1" id="sex">
+								<option value="男">男</option>
+								<option value="女">女</option>
+							</select>
+						</p>
+						<p>
+							<label for="">姓名简拼:</label>
+							<input name="jname" type="text" id="jname" size="35" />
+						</P>
+						<p>
+							<label for="">曾用名:</label>
+							<input name="zname" type="text" id="zname" size="35" value="无" />
+						</P>
+						<p>
+							<label for="">档案号:</label>
+							<input name="number" type="text" id="number" size="35" value="20061020096" />&nbsp;<font color="#FF0000">*</font>
+						</P>
+						<p>
+							<label for="">出生地:</label>
+							<input name="adress" type="text" id="adress" size="35" value="天津市南开区鞍山西道风荷园"/>
+						</P>
+						<p>
+							<label for="">身份证号:</label>
+							<input name="idcard" type="text" id="idcard" size="35" value="130731198110200331" />&nbsp;<font color="#FF0000">*</font>
+						</P>
+						<p>
+							<label for="">健康状况:</label>
+						    <select name="jkzk" size="1" id="jkzk">
+								<option>健康</option>
+								<option>良好</option>
+								<option>较弱</option>
+								<option>残废</option>
+							</select>
+						</p>
+						<p>
+							<label for="">出生日期:</label>
+							<input name="date" type="text" id="date" size="35" value="1973-07-08" />&nbsp;<font color="#FF0000">*</font>
+						</P>
+						<p>
+							<label for="">民族:</label>
+						    <select name="mz" size="1" id="mz">
+								<option>汉族</option>
+								<option>满族</option>
+								<option>回族</option>
+								<option>壮族</option>
+							</select>
+						</p>
+						<p>
+							<label for="">政治面貌:</label>
+						    <select name="zzmm" size="1" id="zzmm">
+								<option>党员</option>
+								<option>团员</option>
+								<option>群众</option>
+							</select>
+						</p>
+						<p>
+							<label for="">兴趣爱好:</label>
+							<input name="xqah" type="text" id="xqah" size="35" value="唱歌" />
+						</P>
+						<p>
+							<label for="">籍贯:</label>
+						    <select name="jq" size="1" id="jq">
+								<option>北京</option>
+								<option>天津</option>
+								<option>河北</option>
+								<option>湖南</option>
+							</select>
+						</p>
+						<p>
+							<label for="">户籍性质:</label>
+						    <select name="hjxz" size="1" id="hjxz">
+								<option>农业</option>
+								<option>非农业</option>
+							</select>
+						</p>
+						<p>
+							<label for="">家庭住址:</label>
+							<input name="homeadress" type="text" id="homeadress" size="35" value="天津市南开区鞍山西道风荷园" />
+						</P>
+						<p>
+							<label for="">入单位日期:</label>
+							<input name="rdate" type="text" id="rdate" size="35" value="2003-07-08"/>
+						</P>
+						<p>
+							<label for="">工作年数:</label>
+							<input name="gzns" type="text" id="gzns" size="35" value="三年" />
+						</P>
+						<p>
+							<label for="">起薪日期:</label>
+							<input name="sdate" type="text" id="sdate" size="35" value="2003-07-01" />
+						</P>
+						
+						<p align="right">
+							<input type="submit" id="BtnSave" name="BtnSave" class="Button" value=" 保存 "/>
+							<input type="button" id="BtnCancel" name="BtnCancel" class="Button" onclick="doCancel();" value=" 关闭 "/>
+						</p>
+					</fieldset>
+				</form>
+			</td>
+		</tr>
+	</table>
+	<!-- Form End -->
+	
+</body>
+</html>
+
